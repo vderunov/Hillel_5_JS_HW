@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HW_10</title>
+  </head>
+
+  <body>
+    <script>
+      var baseOfStudents = [
+        {
+          name: "Vasya",
+          yearStart: 2001,
+          yearEnd: 2005
+        },
+        {
+          name: "Dima",
+          yearStart: 2001,
+          yearEnd: 2003
+        },
+        {
+          name: "Anton",
+          yearStart: 2003,
+          yearEnd: 2003
+        },
+        {
+          name: "Sveta",
+          yearStart: 2006,
+          yearEnd: 2006
+        },
+        {
+          name: "Masha",
+          yearStart: 2003,
+          yearEnd: 2004
+        },
+        {
+          name: "Vadik",
+          yearStart: 2003,
+          yearEnd: 2006
+        },
+        {
+          name: "Kolya",
+          yearStart: 2002,
+          yearEnd: 2006
+        },
+        {
+          name: "Sergey",
+          yearStart: 2001,
+          yearEnd: 2005
+        }
+      ];
+
+      let getListOfStudents = (startDate, finishDate) => {
+        var arrNameYearStart = [];
+        var arrNameYearEnd = [];
+        var arrAllStudents = [];
+
+        for (var i = 0; i < baseOfStudents.length; i++) {
+          if (baseOfStudents[i].yearStart === startDate) {
+            arrNameYearStart[i] = baseOfStudents[i].name;
+          }
+          if (baseOfStudents[i].yearEnd === finishDate) {
+            arrNameYearEnd[i] = baseOfStudents[i].name;
+          }
+        }
+
+        var arrAllStudents = arrNameYearStart.concat(arrNameYearEnd);
+
+        var arrListOfStudents = arrAllStudents.filter(function(item) {
+          return item !== undefined;
+        });
+
+        return console.log(arrListOfStudents);
+      };
+
+      getListOfStudents(2002, 2005);
+
+      let getMaxStudents = (fromDate, endDate) => {
+        let arrNewStartYear = [];
+        let arrNewFinishYear = [];
+
+        let arrStartNameStudents = [];
+        let arrFinishNameStudents = [];
+
+        let arrlist = [];
+        // let experement1 = []
+        // let experement2 = []
+
+        if (fromDate > endDate) {
+          return alert(`Не верно введен период!`);
+        }
+
+        for (var i = 0; i < baseOfStudents.length; i++) {
+          if (
+            baseOfStudents[i].yearStart >= fromDate &&
+            baseOfStudents[i].yearStart <= endDate
+          ) {
+            arrNewStartYear[i] = baseOfStudents[i].yearStart;
+            arrStartNameStudents[i] = baseOfStudents[i].name;
+          }
+
+          if (
+            baseOfStudents[i].yearEnd <= endDate &&
+            baseOfStudents[i].yearEnd >= fromDate
+          ) {
+            arrNewFinishYear[i] = baseOfStudents[i].yearEnd;
+            arrFinishNameStudents[i] = baseOfStudents[i].name;
+          }
+        }
+
+        ////////////
+
+        // var aaa = arrNewStartYear.filter(function (item) {
+        //     return item !== undefined;
+        // })
+
+        // var bbb = arrStartNameStudents.filter(function (item) {
+        //     return item !== undefined;
+        // })
+
+        // var ccc = arrNewFinishYear.filter(function (item) {
+        //     return item !== undefined;
+        // })
+
+        // var ddd = arrFinishNameStudents.filter(function (item) {
+        //     return item !== undefined;
+        // })
+
+        ////////////
+
+        // for (var j = fromDate; j <= endDate; j++) {
+        //     if (arrNewStartYear[j] === arrNewFinishYear[j]) {
+        //         arrlist[j] = arrStartNameStudents;
+        //     }
+        // }
+
+        // var arrListOfStudents = arrAllStudents.filter(function (item) {
+        //     return item !== undefined;
+        // })
+
+        console.log(arrNewStartYear, arrStartNameStudents);
+        console.log(arrNewFinishYear, arrFinishNameStudents);
+        console.log(arrlist);
+
+        // console.log(aaa);
+        // console.log(bbb);
+        // console.log(ccc);
+        // console.log(ddd);
+      };
+
+      getMaxStudents(2002, 2004);
+    </script>
+  </body>
+</html>
