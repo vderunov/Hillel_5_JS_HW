@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HW_5</title>
+  </head>
+
+  <body>
+    <script>
+      /* 1. Сделать проверку на длину строки. Если ее длина меньше 10 символов,
+   то выводить в консоль каждый символ отдельно(посимвольно). Иначе
+   вывести двумя строками 1-ая – первые семь символов и 2-я с 10-го
+   символа до конца строки.*/
+
+      let string;
+      string = "Never say never";
+      index = 0;
+
+      console.log(string.length);
+
+      for (index = 0; string.length < 10; index++) {
+        if (string.charAt(index) == "") continue;
+        console.log(string.charAt(index));
+        if (index == 8) break;
+      }
+
+      if (string.length > 9) {
+        console.log(string.substring(0, 7));
+        console.log(string.substring(9));
+      }
+
+      /* 2. Дана строка. Сделайте заглавным первый символ каждого слова этой 
+           строки */
+
+      let string;
+
+      string = "lost time is never found again.";
+
+      let newArray = string.split(" ");
+
+      for (var i = 0; i < newArray.length; i++) {
+        newArray[i] = newArray[i][0].toUpperCase() + newArray[i].substr(1);
+      }
+
+      console.log(newArray.join(" "));
+    </script>
+  </body>
+</html>
