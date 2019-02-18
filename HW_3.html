@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW_3</title>
+</head>
+
+<body>
+
+    <script>
+        /* 1. В магазине продаются яблоки по цене 12,50. Завтра на них акция -15% 
+(скидка может меняться !!!).
+Также пришли апельсины по цене закупки 12,50(цена может 
+меняться!!!!), наценка в магазине 15%. Рассчитайте цены на товары. */
+
+        var NameApples = "Яблоки";
+        var CleanApplesPrice = 12.50;
+        var discount = 15;
+        var FinalApplesPrice;
+
+        var discount = prompt("Скидка на яблоки составляет", "15");
+
+        if (isNaN(discount) || discount > 100 || discount < 0) {
+            alert("Ошибка ввода скидки");
+        } else {
+            FinalApplesPrice = (CleanApplesPrice - CleanApplesPrice * (discount / 100));
+
+            console.log(NameApples, Math.round(FinalApplesPrice * 100) / 100);
+        }
+
+        var NameOranges = "Апельсины";
+        // var CleanOrangesPrice = 12.50;
+        var markup = 15;
+        var FinalOrangesPrice;
+
+        var CleanOrangesPrice = +prompt("Цена закупки апельсинов составляет", "12.50");
+
+        if (isNaN(CleanOrangesPrice) || CleanOrangesPrice > 100 || CleanOrangesPrice < 0) {
+            alert("Ошибка ввода цены закупки");
+        } else {
+            FinalOrangesPrice = (CleanOrangesPrice * markup) / 100 + CleanOrangesPrice;
+
+            console.log(NameOranges, Math.round(FinalOrangesPrice * 100) / 100);
+        }
+
+        /* 2. Создать ценник
+‘Яблоки украинские
+цена: 12,50грн’
+двумя способами. Учитывая переносы строк и то, что цена меняется при 
+каждом новом поступлении. 
+Использовать для строк синтаксис ES6.(!) */
+
+        //variant_№1
+
+        let NameApplesUa = `'Яблоки украинские. 
+Цена:`;
+        let priceApplesUa = 12.50;
+        let currencyUAH = "грн";
+
+        console.log(`${NameApplesUa} ${priceApplesUa.toFixed(2)}${currencyUAH}'`);
+
+        //variant_№2
+
+        var NameApplesUaV2 = '\'Яблоки украинские. \nЦена: ';
+        var currencyUAHV2 = "грн'";
+
+        console.log(NameApplesUaV2 + priceApplesUa.toFixed(2) + currencyUAHV2);
+    </script>
+
+</body>
+
+</html>
