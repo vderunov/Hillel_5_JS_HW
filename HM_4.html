@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HW_4</title>
+  </head>
+
+  <body>
+    <script>
+      /* 1.  Переписать формирование ценника. Если есть акционная скидка, то 
+рассчитывать ее, если нет – напечатать старый ценник. Написать без 
+копирования одинаковых участков кода. */
+
+      var NameApples = "Яблоки";
+      var CleanApplesPrice = 12.5;
+      var discount = 15;
+      var FinalApplesPrice;
+
+      if (discount) {
+        var discount = prompt("Скидка на яблоки составляет", discount);
+        if (isNaN(discount) || discount > 100 || discount < 0) {
+          alert("Ошибка ввода скидки");
+        } else {
+          FinalApplesPrice =
+            CleanApplesPrice - CleanApplesPrice * (discount / 100);
+          console.log(NameApples, Math.round(FinalApplesPrice * 100) / 100);
+        }
+      } else {
+        console.log(NameApples, Math.round(CleanApplesPrice * 100) / 100);
+      }
+    </script>
+  </body>
+</html>
