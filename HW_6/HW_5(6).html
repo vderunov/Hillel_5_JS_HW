@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HW_5(6)</title>
+  </head>
+
+  <body>
+    <script>
+      /* Даны два числа, которые представлены строками (перевести их в 
+        числа нельзя, т.к. получается очень большое число). Необходимо 
+        сложить их и вывести правильный результат. */
+
+      var string1 = "25345789";
+      var string2 = "25345789";
+
+      var newArray1 = string1.split("");
+      var newArray2 = string2.split("");
+
+      var bal = 0;
+      var result = [];
+
+      while (newArray1.length > newArray2.length) {
+        newArray2.unshift(0);
+        if (newArray1.length == newArray2.length) break;
+      }
+
+      while (newArray2.length > newArray1.length) {
+        newArray1.unshift(0);
+        if (newArray2.length == newArray1.length) break;
+      }
+
+      for (var i = newArray1.length - 1; i > -1; i--) {
+        result[i] = +newArray1[i] + +newArray2[i] + bal;
+        bal = 0;
+        if (result[i] > 9) {
+          result[i] = result[i] % 10;
+          bal = 1;
+          result.unshift();
+        }
+      }
+
+      console.log(result.join(""));
+
+      /* 2) Напишите функцию проверки пароля, которая принимает строку в
+        качестве аргумента и проверяет ее по правилам: 
+        
+        -	пароль должен содержать только буквенно-цифровые символы;
+        -	длина пароля должна быть более 6 символов, но менее 20;
+        -	пароль должен содержать буквы и цифры;
+        
+        Функция должна возвращать “VALID”, если строка соответствует 
+        требованиям или “INVALID”, если это не так.
+        Не используйте регулярные выражения.
+        validatePassword(‘pass’) -> ‘INVALID’
+        validatePassword(‘TcSf12y’) -> ‘VALID’
+        
+        function validatePassword (значение) {
+        // Ваш код здесь
+        } */
+
+      var password = "123qwerty";
+
+      function validatePassword(password) {
+        if (password.length < 6 || password.length > 20) {
+          return "INVALID";
+        }
+
+        for (var i = 0; i < password.length; i++) {
+          var check = password.charCodeAt(i);
+          if (
+            !(check >= 48 && check <= 57) &&
+            !(check >= 65 && check <= 90) &&
+            !(check >= 97 && check <= 122)
+          ) {
+            return "INVALID";
+          }
+        }
+
+        for (var i = 0; i < password.length; i++) {
+          if (!isNaN(password[i])) {
+            var number = true;
+          }
+        }
+
+        for (var i = 0; i < password.length; i++) {
+          if (isNaN(password[i])) {
+            var letter = true;
+          }
+        }
+
+        if (number !== letter) {
+          return "INVALID";
+        }
+
+        return "VALID";
+      }
+
+      console.log(validatePassword(password));
+
+      /* 3. Создайте функцию, которая проверяет число для трех разных 
+требований:
+
+-	число является простым
+-	число четное
+-	число кратное 10
+-	
+Каждое требование должно возвращать либо true, либо false.
+Ответ должен быть задан как массив.
+Число всегда будет целым, положительным или отрицательным. 
+Обратите внимание, что отрицательные числа не могут 
+быть простыми, но они могут быть кратными 10.
+
+checkNumber(7) //==> [true, false, false]
+checkNumber(-10) //==> [false, true, true]
+
+function checkNumber (число) {
+	//Ваш код здась
+} */
+
+      checkNumber(-10);
+
+      function checkNumber(n) {
+        let result = [];
+
+        if (typeof n !== "number") {
+          return console.log("Введите число");
+        }
+
+        if (n % 10 == 0) {
+          result[0] = false;
+          result[1] = true;
+          result[2] = true;
+          return console.log(result);
+        } else if (n != 2 && n % 2 == 0) {
+          result[0] = false;
+          result[1] = true;
+          result[2] = false;
+          return console.log(result);
+        } else if (n != 2 && n > 1) {
+          for (var i = 2; i <= n; i++) {
+            for (var j = 2; j <= n; j++) {
+              if (n % j == 0) break;
+            }
+            if (j == n) {
+              result[0] = true;
+              result[1] = false;
+              result[2] = false;
+              return console.log(result);
+            }
+          }
+        } else if (n == 1) {
+          result[0] = false;
+          result[1] = false;
+          result[2] = false;
+          return console.log(result);
+        } else if (n == 2) {
+          result[0] = true;
+          result[1] = true;
+          result[2] = false;
+          return console.log(result);
+        }
+        console.log(result);
+      }
+    </script>
+  </body>
+</html>
