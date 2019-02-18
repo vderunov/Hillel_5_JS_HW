@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      /* Переписать предыдущую домашнюю работу с использованием объектов.
+
+Реализовать логику:
+
+1) человек вводит пароль,
+2) если он валиден, тогда ему предлагают ввести число(третье задание из 
+предыдущей работы),
+3) если оно соответствует хотя бы одному из условий, то тогда он может ввести два 
+числа для получения результата их сложения.
+*/
+
+      var password = prompt("Введите пароль: (Например: 123qqqQQQ)");
+
+      function validatePassword(password) {
+        if (!password) {
+          return "INVALID";
+        }
+
+        if (password.length < 6 || password.length > 20) {
+          alert("Длина пароля должна быть более 6 символов, но менее 20!");
+          return "INVALID";
+        }
+
+        for (var i = 0; i < password.length; i++) {
+          var check = password.charCodeAt(i);
+          if (
+            !(check >= 48 && check <= 57) &&
+            !(check >= 65 && check <= 90) &&
+            !(check >= 97 && check <= 122)
+          ) {
+            alert("Пароль должен содержать только буквенно-цифровые символы!");
+            return "INVALID";
+          }
+        }
+
+        for (var i = 0; i < password.length; i++) {
+          if (!isNaN(password[i])) {
+            var number = true;
+          }
+        }
+
+        for (var i = 0; i < password.length; i++) {
+          if (isNaN(password[i])) {
+            var letter = true;
+          }
+        }
+
+        if (number !== letter) {
+          alert("Пароль должен содержать буквы и цифры!");
+          return "INVALID";
+        }
+
+        return "VALID";
+      }
+
+      validatePassword();
+
+      if (validatePassword(password) == "VALID") {
+        var visitorNumber = +prompt(
+          `Введите число, которое соответствует трем разным требованиям:
+
+-	число является простым
+-	число четное
+-	число кратное 10
+`
+        );
+      }
+
+      var result = [];
+
+      function checkNumber(visitorNumber) {
+        if (visitorNumber == 0) {
+          visitorNumber = undefined;
+        }
+
+        if (visitorNumber % 10 == 0) {
+          result[0] = false;
+          result[1] = true;
+          result[2] = true;
+        } else if (visitorNumber != 2 && visitorNumber % 2 == 0) {
+          result[0] = false;
+          result[1] = true;
+          result[2] = false;
+        } else if (visitorNumber != 2 && visitorNumber > 1) {
+          for (var i = 2; i <= visitorNumber; i++) {
+            for (var j = 2; j <= visitorNumber; j++) {
+              if (visitorNumber % j == 0) break;
+            }
+            if (j == visitorNumber) {
+              result[0] = true;
+              result[1] = false;
+              result[2] = false;
+            }
+          }
+        } else if (visitorNumber == 1) {
+          result[0] = false;
+          result[1] = false;
+          result[2] = false;
+        } else if (visitorNumber == 2) {
+          result[0] = true;
+          result[1] = true;
+          result[2] = false;
+        }
+      }
+
+      checkNumber(visitorNumber);
+
+      if (result[0] || result[1] || result[2]) {
+        var visitorNumberForCalc1 = +prompt(
+          "Введите первое число для выполнения сложения"
+        );
+      }
+
+      if (visitorNumberForCalc1) {
+        let visitorNumberForCalc2 = prompt(
+          "Введите второе число для выполнения сложения"
+        );
+        let ResultOfAddition = +visitorNumberForCalc1 + +visitorNumberForCalc2;
+        alert(ResultOfAddition);
+      }
+    </script>
+  </body>
+</html>
