@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HW_12</title>
+  </head>
+
+  <body>
+    <script>
+      /* 1) Написать функцию, которая принимает функцию и агрументы и 
+возвращает результат.
+Например:
+- applyAll(sum, 1, 2, 3); // -> 6
+- applyAll(mul, 1, 2, 3, 4); // -> 24 */
+
+      var sum = (...rest) =>
+        rest.reduce((previousValue, currentItem) => {
+          return previousValue + currentItem;
+        });
+
+      var mul = (...rest) =>
+        rest.reduce((previousValue, currentItem) => {
+          return previousValue * currentItem;
+        });
+
+      var applyAll = (newFunc, ...rest) => newFunc.apply(this, rest);
+
+      console.log(applyAll(mul, 1, 2, 3, 4));
+
+      /* 2) Напишите функцию fibonacci (), которая возвращает n-й номер 
+Фибоначчи.
+Например:
+- fibonacci(0); // -> 0;
+- fibonacci(1); // -> 1;
+- fibonacci(3); // -> 2;
+- fibonacci(6); // -> 8; */
+
+      function fibonacci(n) {
+        if (n <= 1) {
+          return n;
+        } else {
+          return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+      }
+
+      console.log(fibonacci(6));
+    </script>
+  </body>
+</html>
