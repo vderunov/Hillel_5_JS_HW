@@ -19,13 +19,12 @@
   <script src="./assets/table.js" defer></script>
   <script src="./assets/stud_table.js" defer></script>
   <script src="./assets/slider.js" defer></script>
-
 </head>
 
 <body>
   <header class="header">
     <div class="header__menu header__menu_margin header__menu_d-none">
-      <a href=""><i class="fab fa-bitcoin"></i></a>
+      <a href="https://www.pw.utc.com/" target="_blank"><i class="fas fa-plane"></i></a>
     </div>
     <nav class="nav nav_small-size">
       <a href="#" class="nav__link nav__link_margin nav__link_size link">Home</a>
@@ -37,40 +36,41 @@
       <div id="clock"><span></span>:<span></span>:<span></span></div>
     </div>
   </header>
-
+  <!-- dropdown menu -->
   <div class="dropdown-menu dropdown-menu_padding">
     <div id="myDropdown" class="dropdown-content">
       <div class="dropdown-content__menu">
         <ul class="block">
-          <li class="block__elem1"><a href="#" class="link" id='link_home'>Home</a></li>
+          <li class="block__elem1"><a href="#" class="link" id='link_slider'>Slider</a></li>
           <li class="block__elem2"><a href="#" class="link" id='link_buttons'>Button</a></li>
           <li class="block__elem3"><a href="#" class="link" id='link_table'>Table</a></li>
-          <li class="block__elem4"><a href="#" class="link" id='link_slider'>Slider</a></li>
-          <li class="block__elem5"><a href="#" class="link" id='link_stud_table'>Student table</a></li>
+          <li class="block__elem4"><a href="#" class="link" id='link_stud_table'>Student table</a></li>
         </ul>
       </div>
     </div>
+    <!-- hamburger  -->
     <div class="main-content">
       <button onclick="togglemenu()" class="hamburger hamburger--slider" type="button">
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
         </span>
       </button>
-      <section id='section_home'>
-        <div class="main-content__arcticle main-content__arcticle_margin">
-          <h1 class="h1 h1-padding">Lorem ipsum dolor sit amet.</h1>
-          <p class="p">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
-            ipsum quaerat officia, dolor doloremque esse, earum perferendis
-            aliquid facilis assumenda vel quod maxime officiis unde veritatis
-            harum maiores fugiat nam asperiores tempore? Culpa voluptates
-            necessitatibus quisquam aut eveniet et molestias velit aspernatur?
-            Nesciunt, ut neque. Qui optio enim nemo ratione recusandae
-            temporibus numquam. Architecto rem inventore excepturi vel!
-          </p>
+      <!-- slider  -->
+      <section id='section_slider'>
+        <h1>Infinity slider</h1>
+        <div class="slider-box" id='main-slider'>
+          <div class="slider-wrapper">
+            <img src="./assets/img/plane3.jpg" id='lastClone' alt="plane1" class="slide">
+            <img src="./assets/img/plane1.jpg" alt="plane1" class="slide">
+            <img src="./assets/img/plane2.jpg" alt="plane2" class="slide">
+            <img src="./assets/img/plane3.jpg" alt="plane3" class="slide">
+            <img src="./assets/img/plane1.jpg" id='firstClone' alt="plane3" class="slide">
+          </div>
         </div>
+        <!-- buttons -->
       </section>
       <section id='section_buttons' class="display_none">
+        <h1>BUTTONS</h1>
         <div class="main-content__arcticle main-content__arcticle_margin">
           <div class="section_buttons__flex section_buttons__margin">
             <input id='my_button' type="button" value='my button' class="my_btn">
@@ -78,8 +78,10 @@
             <input id='my_button' type="button" value='my button' class="my_btn">
           </div>
         </div>
+        <!-- table -->
       </section>
       <section id='section_table' class="display_none">
+        <h1>TABLE</h1>
         <div class="main-content__arcticle__margin">
           <form class="table-form">
             <fieldset id='fieldset'>
@@ -97,7 +99,7 @@
                       class="table-form__form__input" />
                   </div>
                 </div>
-                <div id='' class="table-form__form__wrap">
+                <div id='#' class="table-form__form__wrap">
                   <input id='submit' type="button" value="Go!" class="table-form__button" />
                 </div>
               </div>
@@ -107,23 +109,73 @@
           <br>
           <table id='main-table' class="section_table_table"></table>
         </div>
-      </section>
-      <section id='section_slider' class="display_none">
-        <div class="slider" id='main-slider'>
-          <div class="slider-wrapper">
-            <img src="./assets/img/plane1.jpg" alt="plane1" class="slide">
-            <img src="./assets/img/plane2.jpg" alt="plane2" class="slide">
-            <img src="./assets/img/plane3.jpg" alt="plane3" class="slide">
-          </div>
-        </div>
+        <!-- students table -->
       </section>
       <section id='section_stud_table' class="display_none">
-        <h1>Hello</h1>
+        <h1>Students TABLE</h1>
+        <form action="#" class="section_stud_table_form">
+          <fieldset class="section_stud_table_fieldset">
+            <legend>Students table</legend>
+            <div class="section_stud_table_fieldset__flex">
+              <div>
+                <div class="field">
+                  <label for="last-name">Last Name: </label>
+                  <div class="input-wrap"><input type="text" placeholder="Last Name" name='last-name' maxlength="30"></div>
+                </div>
+                <div class="field">
+                  <label for="first-name">First Name: </label>
+                  <div class="input-wrap"><input type="text" placeholder="First Name" name='first-name' maxlength="30"></div>
+                </div>
+                <div class="field">
+                  <label for="start-year">Start date: </label>
+                  <div class="input-wrap"><input type="number" placeholder="Start date" name='start-year' min="1950"
+                      max="2020" step="1"></div>
+                </div>
+                <div class="field">
+                  <label for="end-year">End date: </label>
+                  <div class="input-wrap"><input type="number" placeholder="End date" name='end-year' min="1950" max="2020"
+                      step="1"></div>
+                </div>
+                <div class="field">
+                  <label for="age">Age: </label>
+                  <div class="input-wrap"><input type="number" placeholder="Age" name='age' min="0" max="150" step="1"></div>
+                </div>
+                <div class="field">
+                  <label for="filter">Filter: </label>
+                  <div class="input-wrap"><input type="text" placeholder="Filter" name='filter' maxlength="30"></div>
+                </div>
+                <button type="reset" class="section_stud_table_btn">Clear</button>
+                <button type="button" class="section_stud_table_btn" disabled>Save</button>
+              </div>
+              <div class="section_stud_table_flex">
+                <div>
+                  <label for="upload-file" class="upload">Add</label>
+                  <input id='upload-file' type="file" class="section_stud_table_btn__">
+                  <button type="button" class="section_stud_table_btn__">Go!</button>
+                  <button type="button" class="section_stud_table_btn__">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+        <h2>Students</h2>
+        <table class="section_stud_table_table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Last name</th>
+              <th>First Name</th>
+              <th>Start date</th>
+              <th>End date</th>
+              <th>Age</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+        </table>
       </section>
     </div>
   </div>
-
-
 
   <footer class="footer">
     <div id="resizeElem"></div>

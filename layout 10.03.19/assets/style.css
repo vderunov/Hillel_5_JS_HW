@@ -13,6 +13,12 @@ body {
 
 /* Helpers */
 
+h1,
+h2 {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
 .link {
     text-decoration: none;
     color: black;
@@ -64,9 +70,9 @@ body {
     margin-right: 5px;
 }
 
-.fa-bitcoin {
+.fa-plane {
     font-size: 60px;
-    color: darkblue;
+    color: #004aff82;
 }
 
 .nav__link_margin {
@@ -99,8 +105,7 @@ body {
 .block__elem1,
 .block__elem2,
 .block__elem3,
-.block__elem4,
-.block__elem5 {
+.block__elem4 {
     margin-top: 15px;
 }
 
@@ -134,7 +139,7 @@ button.hamburger.hamburger--slider {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 100px;
+    height: 60px;
     background: linear-gradient(to right, #eef2f3, #8e9eab);
 }
 
@@ -154,7 +159,7 @@ button.hamburger.hamburger--slider {
         position: fixed;
         top: 0;
         left: 0;
-        margin: 20px;
+        margin: 10px;
         font-size: 30px;
         z-index: 10;
         outline: none;
@@ -180,7 +185,7 @@ button.hamburger.hamburger--slider {
         display: flex;
         flex-direction: column;
         margin: 0 auto;
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .block .link {
@@ -367,23 +372,158 @@ td[title]:hover:after {
     background: linear-gradient(to right, #eef2f3, #8e9eab);
 }
 
-/* slider эфект скольжения  */
+/* slider */
 
-.slider {
+.slider-box {
+    display: block;
     width: 600px;
     height: 341px;
-    border: 5px solid rgb(111, 184, 226);
-    margin: 50px auto;
+    margin: 0 auto;
     overflow: hidden;
+    position: relative;
+    left: 0;
+    top: 0;
 }
 
 .slider-wrapper {
-    width: 1800px;
+    width: 100%;
+    height: 100%;
     position: relative;
     left: 0;
-    transition: all ease 1s;
+    top: 0;
 }
 
-.slider-wrapper img {
-    float: left;
+.slide {
+    position: absolute;
+    top: 0;
+}
+
+.slide:nth-child(1) {
+    left: 0;
+}
+
+.slide:nth-child(2) {
+    left: 100%;
+}
+
+.slide:nth-child(3) {
+    left: 200%;
+}
+
+.slide:nth-child(4) {
+    left: 300%;
+}
+
+.slide:nth-child(5) {
+    left: 400%;
+}
+
+/* ============= */
+
+.section_stud_table_form {
+    width: 415px;
+    margin: 0 auto;
+}
+
+.section_stud_table_fieldset {
+    padding: 10px;
+    margin: 0;
+}
+
+.section_stud_table_fieldset:first-child label {
+    width: 100px;
+    display: inline-block;
+    text-align: start;
+}
+
+.field {
+    margin: 15px 0;
+}
+
+.input-wrap {
+    display: inline-block;
+    position: relative;
+}
+
+.section_stud_table_fieldset:first-child input {
+    width: 160px;
+    height: 25px;
+    padding-left: 5px;
+    background-color: #eae8e8;
+    border: 2px solid transparent;
+    outline: none;
+    text-align: start;
+}
+
+.section_stud_table_fieldset:first-child button {
+    margin-right: 40px;
+}
+
+.section_stud_table_btn {
+    font: 14px/1.25 'Roboto', sans-serif;
+    background: linear-gradient(to right, #eef2f3, #8e9eab);
+    color: black;
+    cursor: pointer;
+    padding: 3px 8px;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    width: 100px;
+}
+
+.section_stud_table_btn__ {
+    font: 14px/1.25 'Roboto', sans-serif;
+    background: linear-gradient(to right, #eef2f3, #8e9eab);
+    color: black;
+    cursor: pointer;
+    padding: 3px 8px;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    width: 100px;
+}
+
+.section_stud_table_flex {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100px;
+}
+
+.section_stud_table_fieldset__flex {
+    display: flex;
+}
+
+.section_stud_table_flex button {
+    margin-top: 20px;
+    outline: none;
+}
+
+.section_stud_table_fieldset:first-child label[for=upload-file] {
+    text-align: center;
+}
+
+.upload {
+    font: 14px/1.25 'Roboto', sans-serif;
+    background: linear-gradient(to right, #eef2f3, #8e9eab);
+    cursor: pointer;
+    padding: 3px 8px;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+input[type=file] {
+    display: none;
+}
+
+.section_stud_table_table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.section_stud_table_table th,
+td {
+    border: 1px solid black;
+    text-align: center;
+    width: 105px;
+    height: 20px;
 }
