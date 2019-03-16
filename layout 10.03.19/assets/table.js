@@ -2,14 +2,10 @@ let mainTable = document.getElementById('main-table');
 let submit = document.getElementById('submit');
 let fieldset = document.getElementById('fieldset');
 let customTable = document.createElement('table');
-let customDiv = document.createElement('div');
-
-submit.addEventListener('click', checkValue);
 
 function checkValue() {
-
-    let rows = document.getElementById("tableLines").value;
-    let cell = document.getElementById("tableСolumns").value;
+    let rows = document.getElementById('tableLines').value;
+    let cell = document.getElementById('tableСolumns').value;
 
     if (mainTable.children[0]) {
         mainTable.removeChild(mainTable.children[0]);
@@ -22,7 +18,7 @@ function checkValue() {
         mainTable.removeChild(mainTable.children[0]);
     }
 
-    if (fieldset.className = 'maxValue_Warning') {
+    if (fieldset.className === 'maxValue_Warning') {
         fieldset.classList.remove('maxValue_Warning');
     }
 
@@ -39,18 +35,18 @@ function checkValue() {
         let notNumber = document.createElement('div');
         notNumber.className = 'fieldset_Warning';
         fieldset.className = 'fieldset_Warning';
-        notNumber.innerHTML = '<span>Вы ввели не число!</span>'
+        notNumber.innerHTML = '<span>Вы ввели не число!</span>';
         mainTable.appendChild(notNumber);
         return;
-    } else {
-        makeTable();
     }
-};
+    makeTable();
+}
+
+submit.addEventListener('click', checkValue);
 
 function makeTable() {
-
-    let rows = document.getElementById("tableLines").value;
-    let cell = document.getElementById("tableСolumns").value;
+    let rows = document.getElementById('tableLines').value;
+    let cell = document.getElementById('tableСolumns').value;
     let customTable = document.createElement('table');
 
     for (let i = 0; i < rows; i++) {
@@ -61,22 +57,22 @@ function makeTable() {
         }
         customTable.appendChild(customTr);
         mainTable.appendChild(customTable);
-        customTable.className = 'section_table_table';
+        customTable.className = 'sectionTabletable';
     }
-};
+}
 
 // title attribute
 
-mainTable.addEventListener('click', makeColor);
-
-function makeColor() {
-    if (event.target.tagName != 'TD') {
+function checkTD() {
+    if (event.target.tagName !== 'TD') {
         return;
     }
     getCellIndex(event.target);
 }
 
+mainTable.addEventListener('click', checkTD);
+
 function getCellIndex(elem) {
-    let cellIndex = "Cell index is: " + elem.cellIndex;
+    let cellIndex = `Cell index is: ${elem.cellIndex}`;
     elem.setAttribute('title', cellIndex);
 }

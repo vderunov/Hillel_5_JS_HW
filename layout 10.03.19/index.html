@@ -41,10 +41,18 @@
     <div id="myDropdown" class="dropdown-content">
       <div class="dropdown-content__menu">
         <ul class="block">
-          <li class="block__elem1"><a href="#" class="link" id='link_slider'>Slider</a></li>
-          <li class="block__elem2"><a href="#" class="link" id='link_buttons'>Button</a></li>
-          <li class="block__elem3"><a href="#" class="link" id='link_table'>Table</a></li>
-          <li class="block__elem4"><a href="#" class="link" id='link_stud_table'>Student table</a></li>
+          <li class="block__elem1">
+            <a href="#" class="link" id="link_slider">Slider</a>
+          </li>
+          <li class="block__elem2">
+            <a href="#" class="link" id="link_buttons">Button</a>
+          </li>
+          <li class="block__elem3">
+            <a href="#" class="link" id="link_table">Table</a>
+          </li>
+          <li class="block__elem4">
+            <a href="#" class="link" id="link_stud_table">Student table</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -56,120 +64,164 @@
         </span>
       </button>
       <!-- slider  -->
-      <section id='section_slider'>
+      <section id="section_slider">
         <h1>Infinity slider</h1>
-        <div class="slider-box" id='main-slider'>
-          <div class="slider-wrapper">
-            <img src="./assets/img/plane3.jpg" id='lastClone' alt="plane1" class="slide">
-            <img src="./assets/img/plane1.jpg" alt="plane1" class="slide">
-            <img src="./assets/img/plane2.jpg" alt="plane2" class="slide">
-            <img src="./assets/img/plane3.jpg" alt="plane3" class="slide">
-            <img src="./assets/img/plane1.jpg" id='firstClone' alt="plane3" class="slide">
+        <div class="slider-box" id="main-slider">
+          <div class="slider-wrapper slider-wrapper-first">
+            <img src="./assets/img/plane3.jpg" alt="plane3" class="slide" />
+            <img src="./assets/img/plane1.jpg" alt="plane1" class="slide" />
+            <img src="./assets/img/plane2.jpg" alt="plane2" class="slide" />
+            <img src="./assets/img/plane3.jpg" alt="plane3" class="slide" />
+            <img src="./assets/img/plane1.jpg" id="firstClone" alt="plane3" class="slide" />
           </div>
         </div>
+        <h2>Slider with arrows</h2>
+        <div class="slider-box" id="usual-slider">
+          <div class="slider-wrapper slider-wrapper-second">
+            <img src="./assets/img/plane3.jpg" id="lastClone" alt="plane1" class="slide" data-about="Boeing111" />
+            <img src="./assets/img/plane1.jpg" alt="plane1" class="slide" data-about="Boeing111" />
+            <img src="./assets/img/plane2.jpg" alt="plane2" class="slide" data-about="Boeing222" />
+            <img src="./assets/img/plane3.jpg" alt="plane3" class="slide" data-about="Boeing333" />
+            <img src="./assets/img/plane1.jpg" id="firstClone" alt="plane3" class="slide" data-about="Boeing333" />
+          </div>
+          <div class="btn-container">
+            <button class="slide-btn" id="prev"></button>
+            <button class="slide-btn" id="next"></button>
+          </div>
+        </div>
+        <ol class="sectionSliderol">
+          <li id="ol_move" class="slider__dot sectionSliderol__background"></li>
+          <li id="ol_move" class="slider__dot sectionSliderol__background"></li>
+          <li id="ol_move" class="slider__dot sectionSliderol__background"></li>
+          <li id="ol_move" class="slider__dot sectionSliderol__background"></li>
+          <li id="ol_move" class="slider__dot sectionSliderol__background"></li>
+        </ol>
+
         <!-- buttons -->
       </section>
-      <section id='section_buttons' class="display_none">
+      <section id="section_buttons" class="display_none">
         <h1>BUTTONS</h1>
         <div class="main-content__arcticle main-content__arcticle_margin">
-          <div class="section_buttons__flex section_buttons__margin">
-            <input id='my_button' type="button" value='my button' class="my_btn">
-            <input id='my_button' type="button" value='my button' class="my_btn">
-            <input id='my_button' type="button" value='my button' class="my_btn">
+          <div class="sectionButtons_flex sectionButtons_margin">
+            <input id="my_button" type="button" value="my button" class="my_btn" />
+            <input id="my_button" type="button" value="my button" class="my_btn" />
+            <input id="my_button" type="button" value="my button" class="my_btn" />
           </div>
         </div>
         <!-- table -->
       </section>
-      <section id='section_table' class="display_none">
+      <section id="section_table" class="display_none">
         <h1>TABLE</h1>
         <div class="main-content__arcticle__margin">
           <form class="table-form">
-            <fieldset id='fieldset'>
+            <fieldset id="fieldset">
               <legend>Let's make a table</legend>
               <div class="table-form__form">
                 <div class="table-form__form__flex">
                   <div class="table-form__form__wrap">
                     <label for="table-lines">Rows:</label>
-                    <input id='tableLines' type="text" name="table-lines" maxlength="2" placeholder="max value: 25"
+                    <input id="tableLines" type="text" name="table-lines" maxlength="2" placeholder="max value: 25"
                       class="table-form__form__input" />
                   </div>
                   <div class="table-form__form__wrap">
                     <label for="table-columns">Columns:</label>
-                    <input id='tableСolumns' type="text" name="table-columns" maxlength="2" placeholder="max value: 25"
+                    <input id="tableСolumns" type="text" name="table-columns" maxlength="2" placeholder="max value: 25"
                       class="table-form__form__input" />
                   </div>
                 </div>
-                <div id='#' class="table-form__form__wrap">
-                  <input id='submit' type="button" value="Go!" class="table-form__button" />
+                <div id="#" class="table-form__form__wrap">
+                  <input id="submit" type="button" value="Go!" class="table-form__button" />
                 </div>
               </div>
             </fieldset>
           </form>
-          <br>
-          <br>
-          <table id='main-table' class="section_table_table"></table>
+          <br />
+          <br />
+          <table id="main-table" class="sectionTabletable"></table>
         </div>
         <!-- students table -->
       </section>
-      <section id='section_stud_table' class="display_none">
+      <section id="section_stud_table" class="display_none">
         <h1>Students TABLE</h1>
-        <form action="#" class="section_stud_table_form">
-          <fieldset class="section_stud_table_fieldset">
+        <form action="#" class="sectionStudTableform">
+          <fieldset class="sectionStudTablefieldset">
             <legend>Students table</legend>
-            <div class="section_stud_table_fieldset__flex">
+            <div class="sectionStudTablefieldset__flex">
               <div>
                 <div class="field">
-                  <label for="last-name">Last Name: </label>
-                  <div class="input-wrap"><input type="text" placeholder="Last Name" name='last-name' maxlength="30"></div>
+                  <label for="last-name">Last Name:
+                  </label>
+                  <div class="input-wrap">
+                    <input type="text" placeholder="Last Name" name="last-name" class="last-name" maxlength="30" />
+                  </div>
                 </div>
                 <div class="field">
-                  <label for="first-name">First Name: </label>
-                  <div class="input-wrap"><input type="text" placeholder="First Name" name='first-name' maxlength="30"></div>
+                  <label for="first-name">First Name:
+                  </label>
+                  <div class="input-wrap">
+                    <input type="text" placeholder="First Name" name="first-name" class="first-name" maxlength="30" />
+                  </div>
                 </div>
                 <div class="field">
-                  <label for="start-year">Start date: </label>
-                  <div class="input-wrap"><input type="number" placeholder="Start date" name='start-year' min="1950"
-                      max="2020" step="1"></div>
+                  <label for="start-year">Start date:
+                  </label>
+                  <div class="input-wrap">
+                    <input type="number" placeholder="Start date" name="start-year" min="1950" max="2020" step="1"
+                      class="start-date" />
+                  </div>
                 </div>
                 <div class="field">
                   <label for="end-year">End date: </label>
-                  <div class="input-wrap"><input type="number" placeholder="End date" name='end-year' min="1950" max="2020"
-                      step="1"></div>
+                  <div class="input-wrap">
+                    <input type="number" placeholder="End date" name="end-year" min="1950" max="2020" step="1" class="end-date" />
+                  </div>
                 </div>
                 <div class="field">
                   <label for="age">Age: </label>
-                  <div class="input-wrap"><input type="number" placeholder="Age" name='age' min="0" max="150" step="1"></div>
+                  <div class="input-wrap">
+                    <input type="number" placeholder="Age" name="age" min="0" max="150" step="1" class="age" />
+                  </div>
                 </div>
                 <div class="field">
                   <label for="filter">Filter: </label>
-                  <div class="input-wrap"><input type="text" placeholder="Filter" name='filter' maxlength="30"></div>
+                  <div class="input-wrap">
+                    <input type="text" placeholder="Filter" name="filter" maxlength="30" />
+                  </div>
                 </div>
-                <button type="reset" class="section_stud_table_btn">Clear</button>
-                <button type="button" class="section_stud_table_btn" disabled>Save</button>
+                <button type="reset" class="sectionStudTablebtn">
+                  Clear
+                </button>
+                <button type="button" class="sectionStudTablebtn save_btn" disabled>
+                  Save
+                </button>
               </div>
-              <div class="section_stud_table_flex">
+              <div class="sectionStudTableflex">
                 <div>
                   <label for="upload-file" class="upload">Add</label>
-                  <input id='upload-file' type="file" class="section_stud_table_btn__">
-                  <button type="button" class="section_stud_table_btn__">Go!</button>
-                  <button type="button" class="section_stud_table_btn__">Cancel</button>
+                  <input id="upload-file" type="file" class="sectionStudTablebtn__" />
+                  <button type="button" class="sectionStudTablebtn__">
+                    Go!
+                  </button>
+                  <button type="button" class="sectionStudTablebtn__">
+                    Cancel
+                  </button>
                 </div>
               </div>
             </div>
           </fieldset>
         </form>
         <h2>Students</h2>
-        <table class="section_stud_table_table">
+        <table class="sectionStudTabletable">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Last name</th>
-              <th>First Name</th>
-              <th>Start date</th>
-              <th>End date</th>
-              <th>Age</th>
-              <th>Edit</th>
-              <th>Delete</th>
+              <th class="stud_th">ID</th>
+              <th class="stud_th">Last name</th>
+              <th class="stud_th">First Name</th>
+              <th class="stud_th">Start date</th>
+              <th class="stud_th">End date</th>
+              <th class="stud_th">Age</th>
+              <th class="stud_th">Edit</th>
+              <th class="stud_th">Delete</th>
             </tr>
           </thead>
         </table>
@@ -193,9 +245,7 @@
       </ul>
     </div>
     <div class="footer__date">
-      <div id="timer">
-        <span></span>:<span></span>:<span></span>
-      </div>
+      <div id="timer"><span></span>:<span></span>:<span></span></div>
       <div id="date">
         <span></span>,&nbsp;<span></span>.<span></span>.<span></span>
       </div>
