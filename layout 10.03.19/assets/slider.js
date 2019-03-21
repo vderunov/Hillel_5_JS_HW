@@ -227,7 +227,7 @@ let sliderInfinity = new Slider();
 // }
 
 // SliderUsual.prototype = Object.create(SliderInfinity.prototype);
-// SliderUsual.prototype.constructor = SliderUsual;
+// SliderUsual.prototype.letructor = SliderUsual;
 
 // SliderUsual.prototype.move = function () {
 //     let size = this.slide.clientWidth;

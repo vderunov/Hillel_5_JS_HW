@@ -527,34 +527,26 @@ td[title]:hover:after {
     outline: none;
 }
 
-.sectionStudTablefieldset:first-child label[for='upload-file'] {
-    text-align: center;
-}
-
-.upload {
-    font: 14px/1.25 'Roboto', sans-serif;
-    background: linear-gradient(to right, #eef2f3, #8e9eab);
-    cursor: pointer;
-    padding: 3px 8px;
-    border-radius: 6px;
-    margin-top: 20px;
-}
-
 input[type='file'] {
     display: none;
 }
 
-.sectionStudTabletable {
+.sectionStudTableTable {
     border: 1px solid black;
     border-collapse: collapse;
 }
 
-.sectionStudTabletable th,
+.sectionStudTableTable th,
 td {
     border: 1px solid black;
     text-align: center;
     width: 105px;
     height: 20px;
+}
+
+.sectionStudTableTable img {
+    padding-top: 2px;
+    cursor: pointer;
 }
 
 .available_save_btn {
@@ -606,4 +598,8 @@ td {
     justify-content: center;
     font-family: sans-serif;
     font-size: 16px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }

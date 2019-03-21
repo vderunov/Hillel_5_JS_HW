@@ -200,8 +200,9 @@
               </div>
               <div class="sectionStudTableflex">
                 <div>
-                  <label for="upload-file" class="upload">Add</label>
-                  <input id="upload-file" type="file" class="sectionStudTablebtn__" />
+                  <button type="button" class="sectionStudTablebtn__ add_btn">
+                    Add
+                  </button>
                   <button type="button" class="sectionStudTablebtn__">
                     Go!
                   </button>
@@ -214,7 +215,7 @@
           </fieldset>
         </form>
         <h2>Students</h2>
-        <table class="sectionStudTabletable">
+        <table class="sectionStudTableTable">
           <thead>
             <tr>
               <th class="stud_th">ID</th>
@@ -227,98 +228,12 @@
               <th class="stud_th">Delete</th>
             </tr>
           </thead>
+          <tbody class="innerStudTable"></tbody>
         </table>
       </section>
     </div>
   </div>
-  <section id="section_stud_table" class="display_none">
-    <h1>Students TABLE</h1>
-    <form action="#" class="sectionStudTableform">
-      <fieldset class="sectionStudTablefieldset">
-        <legend>Students table</legend>
-        <div class="sectionStudTablefieldset__flex">
-          <div>
-            <div class="field">
-              <label for="last-name">Last Name:
-              </label>
-              <div class="input-wrap">
-                <input type="text" placeholder="Last Name" name="last-name" class="last-name" maxlength="30" />
-              </div>
-            </div>
-            <div class="field">
-              <label for="first-name">First Name:
-              </label>
-              <div class="input-wrap">
-                <input type="text" placeholder="First Name" name="first-name" class="first-name" maxlength="30" />
-              </div>
-            </div>
-            <div class="field">
-              <label for="start-year">Start date:
-              </label>
-              <div class="input-wrap">
-                <input type="number" placeholder="Start date" name="start-year" min="1950" max="2020" step="1"
-                  class="start-date" />
-              </div>
-            </div>
-            <div class="field">
-              <label for="end-year">End date: </label>
-              <div class="input-wrap">
-                <input type="number" placeholder="End date" name="end-year" min="1950" max="2020" step="1"
-                  class="end-date" />
-              </div>
-            </div>
-            <div class="field">
-              <label for="age">Age: </label>
-              <div class="input-wrap">
-                <input type="number" placeholder="Age" name="age" min="0" max="150" step="1" class="age" />
-              </div>
-            </div>
-            <div class="field">
-              <label for="filter">Filter: </label>
-              <div class="input-wrap">
-                <input type="text" placeholder="Filter" name="filter" maxlength="30" />
-              </div>
-            </div>
-            <button type="reset" class="sectionStudTablebtn">
-              Clear
-            </button>
-            <button type="button" class="sectionStudTablebtn save_btn" disabled>
-              Save
-            </button>
-          </div>
-          <div class="sectionStudTableflex">
-            <div>
-              <label for="upload-file" class="upload">Add</label>
-              <input id="upload-file" type="file" class="sectionStudTablebtn__" />
-              <button type="button" class="sectionStudTablebtn__">
-                Go!
-              </button>
-              <button type="button" class="sectionStudTablebtn__">
-                Cancel
-              </button>
-            </div>
-          </div>
-        </div>
-      </fieldset>
-    </form>
-    <h2>Students</h2>
-    <table class="sectionStudTabletable">
-      <thead>
-        <tr>
-          <th class="stud_th">ID</th>
-          <th class="stud_th">Last name</th>
-          <th class="stud_th">First Name</th>
-          <th class="stud_th">Start date</th>
-          <th class="stud_th">End date</th>
-          <th class="stud_th">Age</th>
-          <th class="stud_th">Edit</th>
-          <th class="stud_th">Delete</th>
-        </tr>
-      </thead>
-    </table>
-  </section>
-  </div>
-  </div>
+
 
   <footer class="footer">
     <div id="resizeElem"></div>
