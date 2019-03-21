@@ -44,7 +44,11 @@ h2 {
     margin: 0 auto;
 }
 
-#section_slider {
+#section_infinity_slider {
+    margin: 0 auto;
+}
+
+#section_modern_slider {
     margin: 0 auto;
 }
 
@@ -105,7 +109,8 @@ h2 {
 .block__elem1,
 .block__elem2,
 .block__elem3,
-.block__elem4 {
+.block__elem4,
+.block__elem5 {
     margin-top: 15px;
 }
 
@@ -375,7 +380,7 @@ td[title]:hover:after {
 .slider-box {
     display: block;
     width: 600px;
-    height: 341px;
+    height: 310px;
     margin: 0 auto;
     overflow: hidden;
     position: relative;
@@ -421,7 +426,7 @@ td[title]:hover:after {
     justify-content: space-between;
     width: 100%;
     position: absolute;
-    top: 146px;
+    top: 132px;
 }
 
 .slide-btn {
@@ -564,13 +569,12 @@ td {
     width: 100px;
 }
 
-.sectionSliderol {
+.sectionInfSliderol {
     display: flex;
     justify-content: center;
 }
 
-.sectionSliderol__background {
-    margin-top: 2%;
+.sectionInfSliderol__background {
     margin-right: 3%;
     margin-left: 3%;
     list-style: none;
@@ -582,10 +586,24 @@ td {
     transition-duration: 0.5s;
 }
 
-.sectionSliderol__background {
+.sectionInfSliderol__background {
     background-color: black;
 }
 
 .active {
-    background-color: blue;
+    background: linear-gradient(to right, #eef2f3, #8e9eab);
+}
+
+.name-slider {
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    background: linear-gradient(to right, #eef2f3, #8e9eab);
+    top: 138px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-family: sans-serif;
+    font-size: 16px;
 }
