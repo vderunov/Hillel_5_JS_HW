@@ -143,6 +143,7 @@
         </div>
 
       </section>
+
       <section id="section_stud_table" class="display_none">
         <h1>Students TABLE</h1>
         <form action="#" class="sectionStudTableform">
@@ -153,36 +154,36 @@
                 <div class="field">
                   <label for="last-name">Last Name:
                   </label>
-                  <div class="input-wrap">
+                  <div class="input-last-name">
                     <input type="text" placeholder="Last Name" name="last-name" class="last-name" maxlength="30" />
                   </div>
                 </div>
                 <div class="field">
                   <label for="first-name">First Name:
                   </label>
-                  <div class="input-wrap">
+                  <div class="input-first-name">
                     <input type="text" placeholder="First Name" name="first-name" class="first-name" maxlength="30" />
                   </div>
                 </div>
                 <div class="field">
                   <label for="start-year">Start date:
                   </label>
-                  <div class="input-wrap">
+                  <div class="input-start-date">
                     <input type="number" placeholder="Start date" name="start-year" min="1950" max="2020" step="1"
                       class="start-date" />
                   </div>
                 </div>
                 <div class="field">
                   <label for="end-year">End date: </label>
-                  <div class="input-wrap">
+                  <div class="input-end-date">
                     <input type="number" placeholder="End date" name="end-year" min="1950" max="2020" step="1"
                       class="end-date" />
                   </div>
                 </div>
                 <div class="field">
                   <label for="age">Age: </label>
-                  <div class="input-wrap">
-                    <input type="number" placeholder="Age" name="age" min="0" max="150" step="1" class="age" />
+                  <div class="input-age">
+                    <input type="number" placeholder="Age" name="age" min="16" max="85" step="1" class="age" />
                   </div>
                 </div>
                 <div class="field">
@@ -194,22 +195,15 @@
                 <button type="reset" class="sectionStudTablebtn">
                   Clear
                 </button>
-                <button type="button" class="sectionStudTablebtn save_btn" disabled>
+                <button type="button" class="sectionStudTablebtn save_btn">
                   Save
                 </button>
-              </div>
-              <div class="sectionStudTableflex">
-                <div>
-                  <button type="button" class="sectionStudTablebtn__ add_btn">
-                    Add
-                  </button>
-                  <button type="button" class="sectionStudTablebtn__">
-                    Go!
-                  </button>
-                  <button type="button" class="sectionStudTablebtn__">
-                    Cancel
-                  </button>
-                </div>
+                <button type="button" class="sectionStudTablebtn add_btn">
+                  Add
+                </button>
+                <button type="button" class="sectionStudTablebtn cancel_btn">
+                  Cancel
+                </button>
               </div>
             </div>
           </fieldset>
