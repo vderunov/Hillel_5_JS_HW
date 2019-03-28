@@ -56,6 +56,15 @@ h2 {
     margin: 0 auto;
 }
 
+#section_autocomplete {
+    margin: 0 auto;
+    width: 100%;
+}
+
+#map {
+    height: 450px;
+}
+
 /* Header */
 
 .header {
