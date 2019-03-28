@@ -483,6 +483,8 @@ function makeCounter() {
 
 let counter = makeCounter();
 
+let allObj = [];
+
 function makeStudTable() {
     let valueLastName = document.querySelector('.last-name').value;
     let valueFirstName = document.querySelector('.first-name').value;
@@ -495,45 +497,51 @@ function makeStudTable() {
         firstName: valueFirstName,
         startDate: valueStartDate,
         endDate: valueEndDate,
-        age: valueAge,
+        age: valueAge
     };
 
-    let allObj = [];
     allObj.push(startData);
-
-    document.addEventListener('DOMContentLoaded', readyEdit);
-
-    function readyEdit() {
-        let editImg = document.createElement('img');
-        editImg.className = 'cursor-pointer';
-        return (editImg.innerHTML = "<img src='/Users/vderunov/Documents/JavaScript/lesson_20_OOP_Part_2/layout/assets/img/pencil.png'>");
-    }
-
-    document.addEventListener('DOMContentLoaded', readyTrash);
-
-    function readyTrash() {
-        let trashImg = document.createElement('img');
-        return (trashImg.innerHTML = "<img src='/Users/vderunov/Documents/JavaScript/lesson_20_OOP_Part_2/layout/assets/img/trash.png'>");
-    }
 
     let k = '<tr>';
 
-    for (let i = 0; i < allObj.length; i++) {
-        k += `<td>${counter()}</td>`;
-        k += `<td>${allObj[i].lastName}</td>`;
-        k += `<td>${allObj[i].firstName}</td>`;
-        k += `<td>${allObj[i].startDate}</td>`;
-        k += `<td>${allObj[i].endDate}</td>`;
-        k += `<td>${allObj[i].age}</td>`;
-        k += `<td onClick="edit(this)">${readyEdit()}</td>`;
-        k += `<td onClick="this.parentNode.parentNode.removeChild(this.parentNode);">${readyTrash()}</td>`;
-    }
+    k += `<td>${counter()}</td>`;
+    k += `<td>${valueLastName}</td>`;
+    k += `<td>${valueFirstName}</td>`;
+    k += `<td>${valueStartDate}</td>`;
+    k += `<td>${valueEndDate}</td>`;
+    k += `<td>${valueAge}</td>`;
+    k += `<td onClick="edit(this)">${readyEdit()}</td>`;
+    k += `<td onClick="this.parentNode.parentNode.removeChild(this.parentNode);">${readyTrash()}</td>`;
+
     k += '</tr>';
+
+    console.log(allObj);
 
     let studTable = document.querySelector('.innerStudTable');
     let newTbody = document.createElement('tr');
     newTbody.innerHTML = k;
     studTable.insertBefore(newTbody, studTable.children[0]);
+
+    valueLastName = document.querySelector('.last-name').value = "";
+    valueFirstName = document.querySelector('.first-name').value = "";
+    valueStartDate = document.querySelector('.start-date').value = "";
+    valueEndDate = document.querySelector('.end-date').value = "";
+    valueAge = document.querySelector('.age').value = "";
+}
+
+document.addEventListener('DOMContentLoaded', readyEdit);
+
+function readyEdit() {
+    let editImg = document.createElement('img');
+    editImg.className = 'cursor-pointer';
+    return (editImg.innerHTML = "<img src='/Users/vderunov/Documents/JavaScript/lesson_20_OOP_Part_2/layout/assets/img/pencil.png'>");
+}
+
+document.addEventListener('DOMContentLoaded', readyTrash);
+
+function readyTrash() {
+    let trashImg = document.createElement('img');
+    return (trashImg.innerHTML = "<img src='/Users/vderunov/Documents/JavaScript/lesson_20_OOP_Part_2/layout/assets/img/trash.png'>");
 }
 
 function edit(q) {

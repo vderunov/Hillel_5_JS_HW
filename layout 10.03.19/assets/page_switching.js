@@ -8,6 +8,8 @@ let linkTable = document.getElementById('link_table');
 let sectionTable = document.getElementById('section_table');
 let linkStudTable = document.getElementById('link_stud_table');
 let sectionStudTable = document.getElementById('section_stud_table');
+let linkAutocomplete = document.getElementById('link_autocomplete');
+let sectionAutocomplete = document.getElementById('section_autocomplete');
 
 function changeSectionInfSlider() {
     if (sectionInfSlider.className === 'display_none');
@@ -54,9 +56,20 @@ function changeSectionStudTable() {
     sectionModernSlider.className = 'display_none';
 }
 
+function changeSectionAutocomplete() {
+    if (sectionAutocomplete.className === 'display_none');
+    sectionAutocomplete.className = 'display_block'
+    sectionStudTable.className = 'display_none'
+    sectionButtons.className = 'display_none';
+    sectionTable.className = 'display_none';
+    sectionInfSlider.className = 'display_none';
+    sectionModernSlider.className = 'display_none';
+}
+
 linkInfSlider.addEventListener('click', changeSectionInfSlider);
 linkModernSlider.addEventListener('click', changeSectionModernSlider);
 linkStudTable.addEventListener('click', changeSectionStudTable);
 linkButtons.addEventListener('click', changeSectionButtons);
 linkTable.addEventListener('click', changeSectionTable);
 linkStudTable.addEventListener('click', changeSectionStudTable);
+linkAutocomplete.addEventListener('click', changeSectionAutocomplete);
