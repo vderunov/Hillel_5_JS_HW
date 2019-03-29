@@ -65,6 +65,10 @@ h2 {
     height: 450px;
 }
 
+#section_progressbar {
+    margin: 0 auto;
+}
+
 /* Header */
 
 .header {
@@ -119,7 +123,9 @@ h2 {
 .block__elem2,
 .block__elem3,
 .block__elem4,
-.block__elem5 {
+.block__elem5,
+.block__elem6,
+.block__elem7 {
     margin-top: 15px;
 }
 

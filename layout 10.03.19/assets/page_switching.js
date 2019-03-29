@@ -10,6 +10,8 @@ let linkStudTable = document.getElementById('link_stud_table');
 let sectionStudTable = document.getElementById('section_stud_table');
 let linkAutocomplete = document.getElementById('link_autocomplete');
 let sectionAutocomplete = document.getElementById('section_autocomplete');
+let linkProgressbar = document.getElementById('link_progressbar');
+let sectionProgressbar = document.getElementById('section_progressbar');
 
 function changeSectionInfSlider() {
     if (sectionInfSlider.className === 'display_none');
@@ -18,6 +20,8 @@ function changeSectionInfSlider() {
     sectionTable.className = 'display_none';
     sectionStudTable.className = 'display_none';
     sectionModernSlider.className = 'display_none';
+    sectionAutocomplete.className = 'display_none'
+    sectionProgressbar.className = 'display_none'
 }
 
 function changeSectionModernSlider() {
@@ -27,6 +31,8 @@ function changeSectionModernSlider() {
     sectionButtons.className = 'display_none';
     sectionTable.className = 'display_none';
     sectionStudTable.className = 'display_none';
+    sectionAutocomplete.className = 'display_none'
+    sectionProgressbar.className = 'display_none'
 }
 
 function changeSectionButtons() {
@@ -36,6 +42,8 @@ function changeSectionButtons() {
     sectionInfSlider.className = 'display_none';
     sectionStudTable.className = 'display_none';
     sectionModernSlider.className = 'display_none';
+    sectionAutocomplete.className = 'display_none'
+    sectionProgressbar.className = 'display_none'
 }
 
 function changeSectionTable() {
@@ -45,6 +53,8 @@ function changeSectionTable() {
     sectionInfSlider.className = 'display_none';
     sectionStudTable.className = 'display_none';
     sectionModernSlider.className = 'display_none';
+    sectionAutocomplete.className = 'display_none'
+    sectionProgressbar.className = 'display_none'
 }
 
 function changeSectionStudTable() {
@@ -54,11 +64,24 @@ function changeSectionStudTable() {
     sectionTable.className = 'display_none';
     sectionInfSlider.className = 'display_none';
     sectionModernSlider.className = 'display_none';
+    sectionProgressbar.className = 'display_none'
 }
 
 function changeSectionAutocomplete() {
     if (sectionAutocomplete.className === 'display_none');
     sectionAutocomplete.className = 'display_block'
+    sectionStudTable.className = 'display_none'
+    sectionButtons.className = 'display_none';
+    sectionTable.className = 'display_none';
+    sectionInfSlider.className = 'display_none';
+    sectionModernSlider.className = 'display_none';
+    sectionProgressbar.className = 'display_none'
+}
+
+function changeSectionProgressbar() {
+    if (sectionProgressbar.className === 'display_none');
+    sectionProgressbar.className = 'display_block'
+    sectionAutocomplete.className = 'display_none'
     sectionStudTable.className = 'display_none'
     sectionButtons.className = 'display_none';
     sectionTable.className = 'display_none';
@@ -73,3 +96,4 @@ linkButtons.addEventListener('click', changeSectionButtons);
 linkTable.addEventListener('click', changeSectionTable);
 linkStudTable.addEventListener('click', changeSectionStudTable);
 linkAutocomplete.addEventListener('click', changeSectionAutocomplete);
+linkProgressbar.addEventListener('click', changeSectionProgressbar);
