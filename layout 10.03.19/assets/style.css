@@ -487,17 +487,11 @@ td[title]:hover:after {
     margin: 15px 0;
 }
 
-
-/* .input-wrap {
-    display: contents;
-} */
-
 .sectionStudTablefieldset:first-child input {
     width: 160px;
     height: 25px;
     padding-left: 5px;
     background-color: #eae8e8;
-    /* border: 2px solid transparent; */
     outline: none;
     text-align: start;
 }
@@ -535,10 +529,6 @@ td[title]:hover:after {
     flex-direction: column-reverse;
     width: 100px;
 }
-
-/* .sectionStudTablefieldset__flex {
-    display: flex;
-} */
 
 .sectionStudTableflex button {
     margin-top: 20px;
@@ -635,4 +625,115 @@ input.warning-border {
 
 .warning-span p {
     padding-left: 100px;
+}
+
+.progress-bar {
+    margin: 15px 0 15px 0;
+    background: linear-gradient(to right, #eef2f3, #8e9eab);
+    border-radius: 25px;
+    width: 300px;
+    height: 22px;
+    display: inline-block;
+    text-align: initial;
+}
+
+.progress-value {
+    background-color: #004aff82;
+    border-radius: 25px;
+    height: 22px;
+    display: inline-block;
+    animation: progress 2s ease-in-out;
+}
+
+@keyframes progress {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0;
+    }
+}
+
+.section_progressbar__content {
+    display: flex;
+}
+
+.section_progressbar__content img {
+    padding-right: 10px;
+}
+
+.btn-promise-off {
+    width: 120px;
+    height: 25px;
+    background: linear-gradient(to right, #eef2f3, #8e9eab);
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn-promise-on {
+    width: 120px;
+    height: 25px;
+    background: #8fe48f;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    cursor: pointer;
+}
+
+.img-promise {
+    width: 150px;
+    transition-duration: 2s;
+}
+
+.h1-promise {
+    width: 700px;
+    transition-duration: 2s;
+}
+
+.article-promise {
+    width: 700px;
+    transition-duration: 2s;
+}
+
+.weather-btn {
+    width: 96px;
+    height: 25px;
+    background: #004aff82;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.city {
+    width: 100px;
+    height: 25px;
+    outline: none;
+}
+
+.header-weather__flex {
+    display: flex;
+}
+
+.header-weather__content {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+.header-weather__content h4,
+input {
+    margin-bottom: 5px;
+}
+
+.header-weather__content:first-child(input) {
+    margin-bottom: 5px;
+}
+
+.fa-github {
+    font-size: 25px;
 }

@@ -2,350 +2,418 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Layout</title>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-    integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous" />
-  <link rel="stylesheet" href="./assets/hamburgers.css" />
-  <link rel="stylesheet" href="./assets/style.css" />
-  <script src="./assets/main.js" defer></script>
-  <script src="./assets/date.js" defer></script>
-  <script src="./assets/resize.js" defer></script>
-  <script src="./assets/timer.js" defer></script>
-  <script src="./assets/click_button.js" defer></script>
-  <script src="./assets/page_switching.js" defer></script>
-  <script src="./assets/table.js" defer></script>
-  <script src="./assets/stud_table.js" defer></script>
-  <script src="./assets/slider.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Layout</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./assets/hamburgers.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script src="./assets/main.js" defer></script>
+    <script src="./assets/date.js" defer></script>
+    <script src="./assets/resize.js" defer></script>
+    <script src="./assets/timer.js" defer></script>
+    <script src="./assets/click_button.js" defer></script>
+    <script src="./assets/page_switching.js" defer></script>
+    <script src="./assets/table.js" defer></script>
+    <script src="./assets/stud_table.js" defer></script>
+    <script src="./assets/slider.js" defer></script>
+    <script src="./assets/promise.js" defer></script>
+    <script src="./assets/weather.js" defer></script>
 </head>
 
 <body>
-  <header class="header">
-    <div class="header__menu header__menu_margin header__menu_d-none">
-      <a href="https://www.pw.utc.com/" target="_blank"><i class="fas fa-plane"></i></a>
-    </div>
-    <nav class="nav nav_small-size">
-      <a href="#" class="nav__link nav__link_margin nav__link_size link">Home</a>
-      <a href="#" class="nav__link nav__link_margin nav__link_size link">Home</a>
-      <a href="#" class="nav__link nav__link_margin nav__link_size link">Home</a>
-      <a href="#" class="nav__link nav__link_margin nav__link_size link">Home</a>
-    </nav>
-    <div class="header__date">
-      <div id="clock"><span></span>:<span></span>:<span></span></div>
-    </div>
-  </header>
-
-  <div class="dropdown-menu dropdown-menu_padding">
-    <div id="myDropdown" class="dropdown-content">
-      <div class="dropdown-content__menu">
-        <ul class="block">
-          <li class="block__elem1">
-            <a href="#" class="link" id="link_infinity_slider">Infinity slider</a>
-          </li>
-          <li class="block__elem2">
-            <a href="#" class="link" id="link_modern_slider">Modern slider</a>
-          </li>
-          <li class="block__elem3">
-            <a href="#" class="link" id="link_buttons">Button</a>
-          </li>
-          <li class="block__elem4">
-            <a href="#" class="link" id="link_table">Table</a>
-          </li>
-          <li class="block__elem5">
-            <a href="#" class="link" id="link_stud_table">Student table</a>
-          </li>
-          <li class="block__elem6">
-            <a href="#" class="link" id="link_autocomplete">Autocomplete</a>
-          </li>
-          <li class="block__elem7">
-            <a href="#" class="link" id="link_progressbar">Progressbar</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="main-content">
-      <button onclick="togglemenu()" class="hamburger hamburger--slider" type="button">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </button>
-
-      <section id="section_infinity_slider">
-        <h1>Infinity slider</h1>
-        <div class="slider-box" id="main-slider">
-          <div class="slider-wrapper slider-wrapper-first">
-            <img src="./assets/img/Boeing 787.jpg" alt="plane3" class="slide" />
-            <img src="./assets/img/Boeing_747.jpg" alt="plane1" class="slide" />
-            <img src="./assets/img/Boeing_787.jpg" alt="plane2" class="slide" />
-            <img src="./assets/img/Boeing 787.jpg" alt="plane3" class="slide" />
-            <img src="./assets/img/Boeing_747.jpg" id="firstClone" alt="plane3" class="slide" />
-          </div>
+    <header class="header">
+        <div class="header__menu header__menu_margin header__menu_d-none">
+            <a href="https://www.pw.utc.com/" target="_blank"><i class="fas fa-plane"></i></a>
         </div>
-      </section>
-      <section id="section_modern_slider" class="display_none">
-        <h2>Modern slider</h2>
-        <div class="slider-box" id="usual-slider">
-          <div class="slider-wrapper slider-wrapper-second">
-            <img src="./assets/img/Boeing_787.jpg" id="lastClone" alt="plane1" class="slide" data-about="Boeing 787" />
-            <img src="./assets/img/Boeing_767.jpg" alt="plane1" class="slide" data-about="Boeing 767" />
-            <img src="./assets/img/Boeing_757.jpg" alt="plane2" class="slide" data-about="Boeing 757" />
-            <img src="./assets/img/Boeing_787.jpg" alt="plane3" class="slide" data-about="Boeing 787" />
-            <img src="./assets/img/Boeing_767.jpg" id="firstClone" alt="plane3" class="slide" data-about="Boeing 767" />
-          </div>
-          <div class="btn-container">
-            <button class="slide-btn" id="prev"></button>
-            <button class="slide-btn" id="next"></button>
-          </div>
-        </div>
-        <ol class="sectionInfSliderol">
-          <li id="ol_move" class="slider__dot sectionInfSliderol__background"></li>
-          <li id="ol_move" class="slider__dot sectionInfSliderol__background"></li>
-          <li id="ol_move" class="slider__dot sectionInfSliderol__background"></li>
-          <li id="ol_move" class="slider__dot sectionInfSliderol__background"></li>
-          <li id="ol_move" class="slider__dot sectionInfSliderol__background"></li>
-        </ol>
-      </section>
-      <section id="section_buttons" class="display_none">
-        <h1>BUTTONS</h1>
-        <div class="main-content__arcticle main-content__arcticle_margin">
-          <div class="sectionButtons_flex sectionButtons_margin">
-            <input id="my_button" type="button" value="my button" class="my_btn" />
-            <input id="my_button" type="button" value="my button" class="my_btn" />
-            <input id="my_button" type="button" value="my button" class="my_btn" />
-          </div>
-        </div>
-      </section>
-      <section id="section_table" class="display_none">
-        <h1>TABLE</h1>
-        <div class="main-content__arcticle__margin">
-          <form class="table-form">
-            <fieldset id="fieldset">
-              <legend>Let's make a table</legend>
-              <div class="table-form__form">
-                <div class="table-form__form__flex">
-                  <div class="table-form__form__wrap">
-                    <label for="table-lines">Rows:</label>
-                    <input id="tableLines" type="text" name="table-lines" maxlength="2" placeholder="max value: 25"
-                      class="table-form__form__input" />
-                  </div>
-                  <div class="table-form__form__wrap">
-                    <label for="table-columns">Columns:</label>
-                    <input id="tableСolumns" type="text" name="table-columns" maxlength="2" placeholder="max value: 25"
-                      class="table-form__form__input" />
-                  </div>
-                </div>
-                <div id="#" class="table-form__form__wrap">
-                  <input id="submit" type="button" value="Go!" class="table-form__button" />
-                </div>
-              </div>
-            </fieldset>
-          </form>
-          <br />
-          <br />
-          <table id="main-table" class="sectionTabletable"></table>
-        </div>
-
-      </section>
-
-      <section id="section_stud_table" class="display_none">
-        <h1>Students TABLE</h1>
-        <form action="#" class="sectionStudTableform">
-          <fieldset class="sectionStudTablefieldset">
-            <legend>Students table</legend>
-            <div class="sectionStudTablefieldset__flex">
-              <div>
-                <div class="field">
-                  <label for="last-name">Last Name:
-                  </label>
-                  <div class="input-last-name">
-                    <input type="text" placeholder="Last Name" name="last-name" class="last-name" maxlength="30" />
-                  </div>
-                </div>
-                <div class="field">
-                  <label for="first-name">First Name:
-                  </label>
-                  <div class="input-first-name">
-                    <input type="text" placeholder="First Name" name="first-name" class="first-name" maxlength="30" />
-                  </div>
-                </div>
-                <div class="field">
-                  <label for="start-year">Start date:
-                  </label>
-                  <div class="input-start-date">
-                    <input type="number" placeholder="Start date" name="start-year" min="1950" max="2020" step="1"
-                      class="start-date" />
-                  </div>
-                </div>
-                <div class="field">
-                  <label for="end-year">End date: </label>
-                  <div class="input-end-date">
-                    <input type="number" placeholder="End date" name="end-year" min="1950" max="2020" step="1"
-                      class="end-date" />
-                  </div>
-                </div>
-                <div class="field">
-                  <label for="age">Age: </label>
-                  <div class="input-age">
-                    <input type="number" placeholder="Age" name="age" min="16" max="85" step="1" class="age" />
-                  </div>
-                </div>
-                <div class="field">
-                  <label for="filter">Filter: </label>
-                  <div class="input-wrap">
-                    <input type="text" placeholder="Filter" name="filter" maxlength="30" />
-                  </div>
-                </div>
-                <button type="reset" class="sectionStudTablebtn">
-                  Clear
-                </button>
-                <button type="button" class="sectionStudTablebtn save_btn">
-                  Save
-                </button>
-                <button type="button" class="sectionStudTablebtn add_btn">
-                  Add
-                </button>
-                <button type="button" class="sectionStudTablebtn cancel_btn">
-                  Cancel
-                </button>
-              </div>
+        <div class="header-weather__flex">
+            <div class="header-weather__content">
+                <h4>Weather:</h4>
+                <input type="text" class="city" placeholder="City" />
+                <input type="button" value="Get weather!" class="weather-btn" />
             </div>
-          </fieldset>
-        </form>
-        <h2>Students</h2>
-        <table class="sectionStudTableTable">
-          <thead>
-            <tr>
-              <th class="stud_th">ID</th>
-              <th class="stud_th">Last name</th>
-              <th class="stud_th">First Name</th>
-              <th class="stud_th">Start date</th>
-              <th class="stud_th">End date</th>
-              <th class="stud_th">Age</th>
-              <th class="stud_th">Edit</th>
-              <th class="stud_th">Delete</th>
-            </tr>
-          </thead>
-          <tbody class="innerStudTable"></tbody>
-        </table>
-      </section>
-      <section id="section_progressbar" class="display_none"></section>
-      <section id="section_autocomplete" class="display_none">
-        <h3>My Google Maps</h3>
-        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-        <div id="map"></div>
-      </section>
+            <div id="weather"></div>
+            <div class="weather-add"></div>
+        </div>
+        <div class="header__date">
+            <div id="clock"><span></span>:<span></span>:<span></span></div>
+        </div>
+    </header>
+
+    <div class="dropdown-menu dropdown-menu_padding">
+        <div id="myDropdown" class="dropdown-content">
+            <div class="dropdown-content__menu">
+                <ul class="block">
+                    <li class="block__elem1">
+                        <a href="#" class="link" id="link_infinity_slider">Infinity slider</a>
+                    </li>
+                    <li class="block__elem2">
+                        <a href="#" class="link" id="link_modern_slider">Modern slider</a>
+                    </li>
+                    <li class="block__elem3">
+                        <a href="#" class="link" id="link_buttons">Button</a>
+                    </li>
+                    <li class="block__elem4">
+                        <a href="#" class="link" id="link_table">Table</a>
+                    </li>
+                    <li class="block__elem5">
+                        <a href="#" class="link" id="link_stud_table">Student table</a>
+                    </li>
+                    <li class="block__elem6">
+                        <a href="#" class="link" id="link_autocomplete">Autocomplete</a>
+                    </li>
+                    <li class="block__elem7">
+                        <a href="#" class="link" id="link_progressbar">Progressbar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <button onclick="togglemenu()" class="hamburger hamburger--slider" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+
+            <section id="section_infinity_slider">
+                <h1>Infinity slider</h1>
+                <div class="slider-box" id="main-slider">
+                    <div class="slider-wrapper slider-wrapper-first">
+                        <img src="./assets/img/Boeing 787.jpg" alt="plane3" class="slide" />
+                        <img src="./assets/img/Boeing_747.jpg" alt="plane1" class="slide" />
+                        <img src="./assets/img/Boeing_787.jpg" alt="plane2" class="slide" />
+                        <img src="./assets/img/Boeing 787.jpg" alt="plane3" class="slide" />
+                        <img src="./assets/img/Boeing_747.jpg" id="firstClone" alt="plane3" class="slide" />
+                    </div>
+                </div>
+            </section>
+            <section id="section_modern_slider" class="display_none">
+                <h2>Modern slider</h2>
+                <div class="slider-box" id="usual-slider">
+                    <div class="slider-wrapper slider-wrapper-second">
+                        <img src="./assets/img/Boeing_787.jpg" id="lastClone" alt="plane1" class="slide"
+                            data-about="Boeing 787" />
+                        <img src="./assets/img/Boeing_767.jpg" alt="plane1" class="slide" data-about="Boeing 767" />
+                        <img src="./assets/img/Boeing_757.jpg" alt="plane2" class="slide" data-about="Boeing 757" />
+                        <img src="./assets/img/Boeing_787.jpg" alt="plane3" class="slide" data-about="Boeing 787" />
+                        <img src="./assets/img/Boeing_767.jpg" id="firstClone" alt="plane3" class="slide"
+                            data-about="Boeing 767" />
+                    </div>
+                    <div class="btn-container">
+                        <button class="slide-btn" id="prev"></button>
+                        <button class="slide-btn" id="next"></button>
+                    </div>
+                </div>
+                <ol class="sectionInfSliderol">
+                    <li id="ol_move" class="slider__dot sectionInfSliderol__background"></li>
+                    <li id="ol_move" class="slider__dot sectionInfSliderol__background"></li>
+                    <li id="ol_move" class="slider__dot sectionInfSliderol__background"></li>
+                    <li id="ol_move" class="slider__dot sectionInfSliderol__background"></li>
+                    <li id="ol_move" class="slider__dot sectionInfSliderol__background"></li>
+                </ol>
+            </section>
+            <section id="section_buttons" class="display_none">
+                <h1>BUTTONS</h1>
+                <div class="main-content__arcticle main-content__arcticle_margin">
+                    <div class="sectionButtons_flex sectionButtons_margin">
+                        <input id="my_button" type="button" value="my button" class="my_btn" />
+                        <input id="my_button" type="button" value="my button" class="my_btn" />
+                        <input id="my_button" type="button" value="my button" class="my_btn" />
+                    </div>
+                </div>
+            </section>
+            <section id="section_table" class="display_none">
+                <h1>TABLE</h1>
+                <div class="main-content__arcticle__margin">
+                    <form class="table-form">
+                        <fieldset id="fieldset">
+                            <legend>Let's make a table</legend>
+                            <div class="table-form__form">
+                                <div class="table-form__form__flex">
+                                    <div class="table-form__form__wrap">
+                                        <label for="table-lines">Rows:</label>
+                                        <input id="tableLines" type="text" name="table-lines" maxlength="2"
+                                            placeholder="max value: 25" class="table-form__form__input" />
+                                    </div>
+                                    <div class="table-form__form__wrap">
+                                        <label for="table-columns">Columns:</label>
+                                        <input id="tableСolumns" type="text" name="table-columns" maxlength="2"
+                                            placeholder="max value: 25" class="table-form__form__input" />
+                                    </div>
+                                </div>
+                                <div id="#" class="table-form__form__wrap">
+                                    <input id="submit" type="button" value="Go!" class="table-form__button" />
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <br />
+                    <br />
+                    <table id="main-table" class="sectionTabletable"></table>
+                </div>
+            </section>
+
+            <section id="section_stud_table" class="display_none">
+                <h1>Students TABLE</h1>
+                <form action="#" class="sectionStudTableform">
+                    <fieldset class="sectionStudTablefieldset">
+                        <legend>Students table</legend>
+                        <div class="sectionStudTablefieldset__flex">
+                            <div>
+                                <div class="field">
+                                    <label for="last-name">Last Name:
+                                    </label>
+                                    <div class="input-last-name">
+                                        <input type="text" placeholder="Last Name" name="last-name" class="last-name"
+                                            maxlength="30" />
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="first-name">First Name:
+                                    </label>
+                                    <div class="input-first-name">
+                                        <input type="text" placeholder="First Name" name="first-name" class="first-name"
+                                            maxlength="30" />
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="start-year">Start date:
+                                    </label>
+                                    <div class="input-start-date">
+                                        <input type="number" placeholder="Start date" name="start-year" min="1950"
+                                            max="2020" step="1" class="start-date" />
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="end-year">End date: </label>
+                                    <div class="input-end-date">
+                                        <input type="number" placeholder="End date" name="end-year" min="1950"
+                                            max="2020" step="1" class="end-date" />
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="age">Age: </label>
+                                    <div class="input-age">
+                                        <input type="number" placeholder="Age" name="age" min="16" max="85" step="1"
+                                            class="age" />
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="filter">Filter: </label>
+                                    <div class="input-wrap">
+                                        <input type="text" placeholder="Filter" name="filter" maxlength="30" />
+                                    </div>
+                                </div>
+                                <button type="reset" class="sectionStudTablebtn">
+                                    Clear
+                                </button>
+                                <button type="button" class="sectionStudTablebtn save_btn">
+                                    Save
+                                </button>
+                                <button type="button" class="sectionStudTablebtn add_btn">
+                                    Add
+                                </button>
+                                <button type="button" class="sectionStudTablebtn cancel_btn">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+                <h2>Students</h2>
+                <table class="sectionStudTableTable">
+                    <thead>
+                        <tr>
+                            <th class="stud_th">ID</th>
+                            <th class="stud_th">Last name</th>
+                            <th class="stud_th">First Name</th>
+                            <th class="stud_th">Start date</th>
+                            <th class="stud_th">End date</th>
+                            <th class="stud_th">Age</th>
+                            <th class="stud_th">Edit</th>
+                            <th class="stud_th">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody class="innerStudTable"></tbody>
+                </table>
+            </section>
+            <section id="section_progressbar" class="display_none">
+                <div class="progress-bar">
+                    <span class="progress-value"></span>
+                </div>
+                <div class="buttons">
+                    <input type="button" id="btn-one" class="btn-promise btn-promise-off" value="Одновременно"
+                        disabled />
+                    <input type="button" id="btn-two" class="btn-promise btn-promise-off" value="По очереди" disabled />
+                </div>
+                <div class="section_progressbar__content">
+                    <div>
+                        <img src="./assets/img/viewfromplane.jpg" alt="viewfromplane" class="img-promise" />
+                    </div>
+                    <div>
+                        <article class="article-promise">
+                            <h1 class="h1-promise">Lorem, ipsum dolor.</h1>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. Autem ab eligendi atque
+                                recusandae modi vel repellendus vero aliquam
+                                ex enim delectus dolorum consequatur
+                                quibusdam eum laborum eos, nulla est sed.
+                                Quam consequuntur.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+                <div class="section_progressbar__content">
+                    <div>
+                        <img src="./assets/img/viewfromplane.jpg" alt="viewfromplane" class="img-promise" />
+                    </div>
+                    <div>
+                        <article class="article-promise">
+                            <h1 class="h1-promise">Lorem, ipsum dolor.</h1>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. Autem ab eligendi atque
+                                recusandae modi vel repellendus vero aliquam
+                                ex enim delectus dolorum consequatur
+                                quibusdam eum laborum eos, nulla est sed.
+                                Quam consequuntur.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+                <div class="section_progressbar__content">
+                    <div>
+                        <img src="./assets/img/viewfromplane.jpg" alt="viewfromplane" class="img-promise" />
+                    </div>
+                    <div>
+                        <article class="article-promise">
+                            <h1 class="h1-promise">Lorem, ipsum dolor.</h1>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. Autem ab eligendi atque
+                                recusandae modi vel repellendus vero aliquam
+                                ex enim delectus dolorum consequatur
+                                quibusdam eum laborum eos, nulla est sed.
+                                Quam consequuntur.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section id="section_autocomplete" class="display_none">
+                <h3>My Google Maps</h3>
+                <input id="pac-input" class="controls" type="text" placeholder="Search Box" />
+                <div id="map"></div>
+            </section>
+        </div>
     </div>
-  </div>
 
-  <footer class="footer">
-    <div id="resizeElem"></div>
-    <div class="footer__menu">
-      <ul class="footer__menu_flex">
-        <li class="footer__item_margin footer__item_style">
-          <a href="" class="link">Home</a>
-        </li>
-        <li class="footer__item_margin footer__item_style">
-          <a href="" class="link">Home</a>
-        </li>
-        <li class="footer__item_margin footer__item_style">
-          <a href="" class="link">Home</a>
-        </li>
-      </ul>
-    </div>
-    <div class="footer__date">
-      <div id="timer"><span></span>:<span></span>:<span></span></div>
-      <div id="date">
-        <span></span>,&nbsp;<span></span>.<span></span>.<span></span>
-      </div>
-    </div>
-  </footer>
-  <script>
-    function initAutocomplete() {
-      var map = new google.maps.Map(document.getElementById('map'), {
-        center: {
-          lat: 48.466561,
-          lng: 35.055325
-        },
-        zoom: 13,
-        mapTypeId: 'roadmap'
-      });
+    <footer class="footer">
+        <div id="resizeElem"></div>
+        <div class="footer__menu">
+            <ul class="footer__menu_flex">
+                <li class="footer__item_margin footer__item_style">
+                    <a href="https://github.com/vderunov" class="link" target="_blank"><i class="fab fa-github"></i></a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer__date">
+            <div id="timer"><span></span>:<span></span>:<span></span></div>
+            <div id="date">
+                <span></span>,&nbsp;<span></span>.<span></span>.<span></span>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function initAutocomplete() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {
+                    lat: 48.466561,
+                    lng: 35.055325,
+                },
+                zoom: 13,
+                mapTypeId: 'roadmap',
+            });
 
-      var hillel = {
-        lat: 48.466561,
-        lng: 35.055325
-      };
+            var hillel = {
+                lat: 48.466561,
+                lng: 35.055325,
+            };
 
-      var marker = new google.maps.Marker({
-        position: hillel,
-        map: map
-      });
+            var marker = new google.maps.Marker({
+                position: hillel,
+                map: map,
+            });
 
-      // Create the search box and link it to the UI element.
-      var input = document.getElementById('pac-input');
-      var searchBox = new google.maps.places.SearchBox(input);
-      map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+            // Create the search box and link it to the UI element.
+            var input = document.getElementById('pac-input');
+            var searchBox = new google.maps.places.SearchBox(input);
+            map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-      // Bias the SearchBox results towards current map's viewport.
-      map.addListener('bounds_changed', function () {
-        searchBox.setBounds(map.getBounds());
-      });
+            // Bias the SearchBox results towards current map's viewport.
+            map.addListener('bounds_changed', function () {
+                searchBox.setBounds(map.getBounds());
+            });
 
-      var markers = [];
-      // Listen for the event fired when the user selects a prediction and retrieve
-      // more details for that place.
-      searchBox.addListener('places_changed', function () {
-        var places = searchBox.getPlaces();
+            var markers = [];
+            // Listen for the event fired when the user selects a prediction and retrieve
+            // more details for that place.
+            searchBox.addListener('places_changed', function () {
+                var places = searchBox.getPlaces();
 
-        if (places.length == 0) {
-          return;
+                if (places.length == 0) {
+                    return;
+                }
+
+                // Clear out the old markers.
+                markers.forEach(function (marker) {
+                    marker.setMap(null);
+                });
+                markers = [];
+
+                // For each place, get the icon, name and location.
+                var bounds = new google.maps.LatLngBounds();
+                places.forEach(function (place) {
+                    if (!place.geometry) {
+                        console.log('Returned place contains no geometry');
+                        return;
+                    }
+                    var icon = {
+                        url: place.icon,
+                        size: new google.maps.Size(71, 71),
+                        origin: new google.maps.Point(0, 0),
+                        anchor: new google.maps.Point(17, 34),
+                        scaledSize: new google.maps.Size(25, 25),
+                    };
+
+                    // Create a marker for each place.
+                    markers.push(
+                        new google.maps.Marker({
+                            map: map,
+                            icon: icon,
+                            title: place.name,
+                            position: place.geometry.location,
+                        })
+                    );
+
+                    if (place.geometry.viewport) {
+                        // Only geocodes have viewport.
+                        bounds.union(place.geometry.viewport);
+                    } else {
+                        bounds.extend(place.geometry.location);
+                    }
+                });
+                map.fitBounds(bounds);
+            });
         }
-
-        // Clear out the old markers.
-        markers.forEach(function (marker) {
-          marker.setMap(null);
-        });
-        markers = [];
-
-        // For each place, get the icon, name and location.
-        var bounds = new google.maps.LatLngBounds();
-        places.forEach(function (place) {
-          if (!place.geometry) {
-            console.log("Returned place contains no geometry");
-            return;
-          }
-          var icon = {
-            url: place.icon,
-            size: new google.maps.Size(71, 71),
-            origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(17, 34),
-            scaledSize: new google.maps.Size(25, 25)
-          };
-
-          // Create a marker for each place.
-          markers.push(new google.maps.Marker({
-            map: map,
-            icon: icon,
-            title: place.name,
-            position: place.geometry.location
-          }));
-
-          if (place.geometry.viewport) {
-            // Only geocodes have viewport.
-            bounds.union(place.geometry.viewport);
-          } else {
-            bounds.extend(place.geometry.location);
-          }
-        });
-        map.fitBounds(bounds);
-      });
-    }
-  </script>
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYcJzlJq1kTiPSXkYssBEH3I1qGZuilR4&libraries=places&callback=initAutocomplete"
-    async defer></script>
+    </script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYcJzlJq1kTiPSXkYssBEH3I1qGZuilR4&libraries=places&callback=initAutocomplete"
+        async defer></script>
 </body>
 
 </html>

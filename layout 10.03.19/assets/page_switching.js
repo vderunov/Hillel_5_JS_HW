@@ -64,6 +64,7 @@ function changeSectionStudTable() {
     sectionTable.className = 'display_none';
     sectionInfSlider.className = 'display_none';
     sectionModernSlider.className = 'display_none';
+    sectionAutocomplete.className = 'display_none'
     sectionProgressbar.className = 'display_none'
 }
 
