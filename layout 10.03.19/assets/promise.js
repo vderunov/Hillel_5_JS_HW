@@ -60,6 +60,7 @@ function queue(toggle) {
     for (let i = 0; i < elements; i++) {
         promise
             .then(() => {
+                event.stopPropagation();
                 if (!toggle) {
                     hideElement(images[i]);
                 } else {
