@@ -10,6 +10,7 @@
         integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous" />
     <link rel="stylesheet" href="./assets/hamburgers.css" />
     <link rel="stylesheet" href="./assets/style.css" />
+    <script src="./assets/jquery-3.3.1.js" defer></script>
     <script src="./assets/main.js" defer></script>
     <script src="./assets/date.js" defer></script>
     <script src="./assets/resize.js" defer></script>
@@ -25,6 +26,7 @@
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYcJzlJq1kTiPSXkYssBEH3I1qGZuilR4&libraries=places&callback=initAutocomplete"
         defer></script>
+    <script src="./assets/student_table_jQ.js" defer></script>
 </head>
 
 <body>
@@ -70,6 +72,9 @@
                     </li>
                     <li class="block__elem7">
                         <a href="#" class="link" id="link_progressbar">Progressbar</a>
+                    </li>
+                    <li class="block__elem8">
+                        <a href="#" class="link" id="link_stud_table-jq">Student table(jQuery)</a>
                     </li>
                 </ul>
             </div>
@@ -312,6 +317,90 @@
                 <h3>My Google Maps</h3>
                 <input id="pac-input" class="controls" type="text" placeholder="Search Box" />
                 <div id="map"></div>
+            </section>
+            <section id="section_stud_table-jq" class="display_none">
+                <h1>Student table(jQuery)</h1>
+                <form action="#" class="sectionStudTableform">
+                    <fieldset class="sectionStudTablefieldset">
+                        <legend>Student table(jQuery)</legend>
+                        <div class="sectionStudTablefieldset__flex">
+                            <div>
+                                <div class="field">
+                                    <label for="last-name-jq">Last Name:
+                                    </label>
+                                    <div class="input-last-name-jq">
+                                        <input type="text" placeholder="Last Name" name="last-name-jq"
+                                            class="last-name-jq" maxlength="30" />
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="first-name-jq">First Name:
+                                    </label>
+                                    <div class="input-first-name-jq">
+                                        <input type="text" placeholder="First Name" name="first-name-jq"
+                                            class="first-name-jq" maxlength="30" />
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="start-year">Start date:
+                                    </label>
+                                    <div class="input-start-date-jq">
+                                        <input type="number" placeholder="Start date" name="start-year" min="1950"
+                                            max="2020" step="1" class="start-date-jq" />
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="end-year">End date: </label>
+                                    <div class="input-end-date-jq">
+                                        <input type="number" placeholder="End date" name="end-year" min="1950"
+                                            max="2020" step="1" class="end-date-jq" />
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="age-jq">Age: </label>
+                                    <div class="input-age-jq">
+                                        <input type="number" placeholder="Age" name="age-jq" min="16" max="85" step="1"
+                                            class="age-jq" />
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="filter">Filter: </label>
+                                    <div class="input-wrap">
+                                        <input type="text" placeholder="Filter" name="filter" maxlength="30" />
+                                    </div>
+                                </div>
+                                <button type="reset" class="sectionStudTablebtn">
+                                    Clear
+                                </button>
+                                <button type="button" class="sectionStudTablebtn save_btn">
+                                    Save
+                                </button>
+                                <button type="button" class="sectionStudTablebtn add_btn-jq">
+                                    Add
+                                </button>
+                                <button type="button" class="sectionStudTablebtn cancel_btn-jq">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+                <h2>Students</h2>
+                <table class="sectionStudTableTable">
+                    <thead>
+                        <tr>
+                            <th class="stud_th">ID</th>
+                            <th class="stud_th">Last name</th>
+                            <th class="stud_th">First Name</th>
+                            <th class="stud_th">Start date</th>
+                            <th class="stud_th">End date</th>
+                            <th class="stud_th">Age</th>
+                            <th class="stud_th">Edit</th>
+                            <th class="stud_th">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody class="innerStudTable-jq"></tbody>
+                </table>
             </section>
         </div>
     </div>

@@ -5,7 +5,7 @@ let startDate = document.querySelector('.start-date');
 let age = document.querySelector('.age');
 let addBtn = document.querySelector('.add_btn');
 let cancelBtn = document.querySelector('.cancel_btn');
-let saveBtn = document.querySelector('.save_btn');
+// let saveBtn = document.querySelector('.save_btn');
 
 lastName.addEventListener('input', checkValueLastName);
 firstName.addEventListener('input', checkValueFirstName);
@@ -14,7 +14,6 @@ startDate.addEventListener('input', checkStartDate);
 age.addEventListener('input', checkAge);
 addBtn.addEventListener('click', makeStudTable);
 cancelBtn.addEventListener('click', clearField);
-// saveBtn.addEventListener('click', saveData);
 
 lastName.addEventListener('input', getValidate);
 firstName.addEventListener('input', getValidate);
@@ -55,17 +54,11 @@ function clearField() {
     }
 }
 
-// check Last Name
-
 function checkValueLastName() {
-    let lastName = document.querySelector('.last-name');
     let inputLastName = document.querySelector('.input-last-name');
     let valueLastName = document.querySelector('.last-name').value;
 
-    if (
-        lastName.className === 'last-name warning-border' &&
-        valueLastName === ''
-    ) {
+    if (lastName.className === 'last-name warning-border' && valueLastName === '') {
         lastName.classList.remove('warning-border');
         inputLastName.removeChild(inputLastName.children[1]);
         return;
@@ -87,8 +80,7 @@ function checkValueLastName() {
                 let span = document.createElement('span');
                 span.className = 'warning-span';
                 lastName.classList.add('warning-border');
-                span.innerHTML =
-                    'Фамилия должна содержать только буквенные символы!';
+                span.innerHTML = 'Фамилия должна содержать только буквенные символы!';
                 inputLastName.appendChild(span);
                 return;
             }
@@ -123,8 +115,7 @@ function checkValueLastName() {
                 let span = document.createElement('span');
                 lastName.classList.add('warning-border');
                 span.className = 'warning-span';
-                span.innerHTML =
-                    'Фамилия должна содержать только буквенные символы!';
+                span.innerHTML = 'Фамилия должна содержать только буквенные символы!';
                 inputLastName.appendChild(span);
                 return;
             }
@@ -133,14 +124,8 @@ function checkValueLastName() {
     }
 
     if (
-        !(
-            valueLastName.charCodeAt(0) >= 65 &&
-            valueLastName.charCodeAt(0) <= 90
-        ) &&
-        !(
-            valueLastName.charCodeAt(0) >= 1040 &&
-            valueLastName.charCodeAt(0) <= 1071
-        )
+        !(valueLastName.charCodeAt(0) >= 65 && valueLastName.charCodeAt(0) <= 90) &&
+        !(valueLastName.charCodeAt(0) >= 1040 && valueLastName.charCodeAt(0) <= 1071)
     ) {
         if (lastName.className !== 'last-name warning-border') {
             let span = document.createElement('span');
@@ -159,17 +144,11 @@ function checkValueLastName() {
     }
 }
 
-// check First Name
-
 function checkValueFirstName() {
-    let firstName = document.querySelector('.first-name');
     let inputFirstName = document.querySelector('.input-first-name');
     let valueFirstName = document.querySelector('.first-name').value;
 
-    if (
-        firstName.className === 'first-name warning-border' &&
-        valueFirstName === ''
-    ) {
+    if (firstName.className === 'first-name warning-border' && valueFirstName === '') {
         firstName.classList.remove('warning-border');
         inputFirstName.removeChild(inputFirstName.children[1]);
         return;
@@ -191,8 +170,7 @@ function checkValueFirstName() {
                 let span = document.createElement('span');
                 span.className = 'warning-span';
                 firstName.classList.add('warning-border');
-                span.innerHTML =
-                    'Имя должно содержать только буквенные символы!';
+                span.innerHTML = 'Имя должно содержать только буквенные символы!';
                 inputFirstName.appendChild(span);
                 return;
             }
@@ -227,8 +205,7 @@ function checkValueFirstName() {
                 let span = document.createElement('span');
                 firstName.classList.add('warning-border');
                 span.className = 'warning-span';
-                span.innerHTML =
-                    'Имя должно содержать только буквенные символы!';
+                span.innerHTML = 'Имя должно содержать только буквенные символы!';
                 inputFirstName.appendChild(span);
                 return;
             }
@@ -237,14 +214,8 @@ function checkValueFirstName() {
     }
 
     if (
-        !(
-            valueFirstName.charCodeAt(0) >= 65 &&
-            valueFirstName.charCodeAt(0) <= 90
-        ) &&
-        !(
-            valueFirstName.charCodeAt(0) >= 1040 &&
-            valueFirstName.charCodeAt(0) <= 1071
-        )
+        !(valueFirstName.charCodeAt(0) >= 65 && valueFirstName.charCodeAt(0) <= 90) &&
+        !(valueFirstName.charCodeAt(0) >= 1040 && valueFirstName.charCodeAt(0) <= 1071)
     ) {
         if (firstName.className !== 'first-name warning-border') {
             let span = document.createElement('span');
@@ -263,18 +234,12 @@ function checkValueFirstName() {
     }
 }
 
-// check End Date
-
 function checkEndDate() {
-    let endDate = document.querySelector('.end-date');
     let valueEndDate = document.querySelector('.end-date').value;
     let inputEndDate = document.querySelector('.input-end-date');
     let valueStartDate = document.querySelector('.start-date').value;
 
-    if (
-        endDate.className === 'end-date warning-border' &&
-        valueEndDate === ''
-    ) {
+    if (endDate.className === 'end-date warning-border' && valueEndDate === '') {
         endDate.classList.remove('warning-border');
         inputEndDate.removeChild(inputEndDate.children[1]);
         return;
@@ -284,10 +249,7 @@ function checkEndDate() {
         return;
     }
 
-    if (
-        valueEndDate > 2020 &&
-        endDate.className === 'end-date warning-border'
-    ) {
+    if (valueEndDate > 2020 && endDate.className === 'end-date warning-border') {
         endDate.classList.remove('warning-border');
         inputEndDate.removeChild(inputEndDate.children[1]);
     }
@@ -304,10 +266,7 @@ function checkEndDate() {
         return;
     }
 
-    if (
-        valueEndDate < 1950 &&
-        endDate.className === 'end-date warning-border'
-    ) {
+    if (valueEndDate < 1950 && endDate.className === 'end-date warning-border') {
         endDate.classList.remove('warning-border');
         inputEndDate.removeChild(inputEndDate.children[1]);
     }
@@ -324,10 +283,7 @@ function checkEndDate() {
         return;
     }
 
-    if (
-        valueEndDate < valueStartDate &&
-        endDate.className === 'end-date warning-border'
-    ) {
+    if (valueEndDate < valueStartDate && endDate.className === 'end-date warning-border') {
         endDate.classList.remove('warning-border');
         inputEndDate.removeChild(inputEndDate.children[1]);
     }
@@ -350,17 +306,11 @@ function checkEndDate() {
     }
 }
 
-// check Start Date
-
 function checkStartDate() {
-    let startDate = document.querySelector('.start-date');
     let valueStartDate = document.querySelector('.start-date').value;
     let inputStartDate = document.querySelector('.input-start-date');
 
-    if (
-        startDate.className === 'start-date warning-border' &&
-        valueStartDate === ''
-    ) {
+    if (startDate.className === 'start-date warning-border' && valueStartDate === '') {
         startDate.classList.remove('warning-border');
         inputStartDate.removeChild(inputStartDate.children[1]);
         return;
@@ -370,10 +320,7 @@ function checkStartDate() {
         return;
     }
 
-    if (
-        valueStartDate > 2020 &&
-        startDate.className === 'start-date warning-border'
-    ) {
+    if (valueStartDate > 2020 && startDate.className === 'start-date warning-border') {
         startDate.classList.remove('warning-border');
         inputStartDate.removeChild(inputStartDate.children[1]);
     }
@@ -390,10 +337,7 @@ function checkStartDate() {
         return;
     }
 
-    if (
-        valueStartDate < 1950 &&
-        startDate.className === 'start-date warning-border'
-    ) {
+    if (valueStartDate < 1950 && startDate.className === 'start-date warning-border') {
         startDate.classList.remove('warning-border');
         inputStartDate.removeChild(inputStartDate.children[1]);
     }
@@ -416,10 +360,7 @@ function checkStartDate() {
     }
 }
 
-// check Age
-
 function checkAge() {
-    let age = document.querySelector('.age');
     let valueAge = document.querySelector('.age').value;
     let inputAge = document.querySelector('.input-age');
 
@@ -474,7 +415,6 @@ function checkAge() {
 }
 
 function getValidate() {
-    let addBtn = document.querySelector('.add_btn');
     let inputEndDate = document.querySelector('.input-end-date');
     let inputStartDate = document.querySelector('.input-start-date');
     let inputAge = document.querySelector('.input-age');
@@ -519,13 +459,12 @@ function getValidate() {
 
 function makeCounter() {
     let currentCount = 1;
-    return function() {
+    return function () {
         return currentCount++;
     };
 }
 
 let counter = makeCounter();
-
 let allObj = [];
 
 function makeStudTable() {
@@ -553,8 +492,10 @@ function makeStudTable() {
     k += `<td>${valueStartDate}</td>`;
     k += `<td>${valueEndDate}</td>`;
     k += `<td>${valueAge}</td>`;
-    k += `<td onClick="edit(this)">${readyEdit()}</td>`;
-    k += `<td onClick="this.parentNode.parentNode.removeChild(this.parentNode);">${readyTrash()}</td>`;
+    k += `<td onClick="edit(this)">${(document.createElement('img').innerHTML = "<img src='/Users/vderunov/Documents/JavaScript/lesson_20_OOP_Part_2/layout/assets/img/pencil.png'>")}</td>`;
+    k += `<td onClick="this.parentNode.parentNode.removeChild(this.parentNode);">${(document.createElement(
+        'img',
+    ).innerHTML = "<img src='/Users/vderunov/Documents/JavaScript/lesson_20_OOP_Part_2/layout/assets/img/trash.png'>")}</td>`;
 
     k += '</tr>';
 
@@ -563,28 +504,11 @@ function makeStudTable() {
     newTbody.innerHTML = k;
     studTable.insertBefore(newTbody, studTable.children[0]);
 
-    valueLastName = document.querySelector('.last-name').value = '';
-    valueFirstName = document.querySelector('.first-name').value = '';
-    valueStartDate = document.querySelector('.start-date').value = '';
-    valueEndDate = document.querySelector('.end-date').value = '';
-    valueAge = document.querySelector('.age').value = '';
-}
-
-document.addEventListener('DOMContentLoaded', readyEdit);
-
-function readyEdit() {
-    let editImg = document.createElement('img');
-    editImg.className = 'cursor-pointer';
-    return (editImg.innerHTML =
-        "<img src='/Users/vderunov/Documents/JavaScript/lesson_20_OOP_Part_2/layout/assets/img/pencil.png'>");
-}
-
-document.addEventListener('DOMContentLoaded', readyTrash);
-
-function readyTrash() {
-    let trashImg = document.createElement('img');
-    return (trashImg.innerHTML =
-        "<img src='/Users/vderunov/Documents/JavaScript/lesson_20_OOP_Part_2/layout/assets/img/trash.png'>");
+    document.querySelector('.last-name').value = '';
+    document.querySelector('.first-name').value = '';
+    document.querySelector('.start-date').value = '';
+    document.querySelector('.end-date').value = '';
+    document.querySelector('.age').value = '';
 }
 
 function edit(q) {
@@ -608,17 +532,9 @@ function edit(q) {
         document.querySelector('.age').value = '';
     }
 
-    document.querySelector('.last-name').value =
-        q.parentNode.children[1].textContent;
-    document.querySelector('.first-name').value =
-        q.parentNode.children[2].textContent;
-    document.querySelector('.start-date').value =
-        q.parentNode.children[3].textContent;
-    document.querySelector('.end-date').value =
-        q.parentNode.children[4].textContent;
+    document.querySelector('.last-name').value = q.parentNode.children[1].textContent;
+    document.querySelector('.first-name').value = q.parentNode.children[2].textContent;
+    document.querySelector('.start-date').value = q.parentNode.children[3].textContent;
+    document.querySelector('.end-date').value = q.parentNode.children[4].textContent;
     document.querySelector('.age').value = q.parentNode.children[5].textContent;
 }
-
-// function saveData() {
-
-// }
