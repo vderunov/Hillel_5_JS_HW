@@ -4,7 +4,7 @@ let images = document.querySelectorAll('.img-promise');
 let headers = document.querySelectorAll('.h1-promise');
 let articles = document.querySelectorAll('.article-promise');
 let buttons = document.querySelector('.buttons');
-let promise = new Promise(resolve => {
+let promise = new Promise((resolve) => {
     resolve(buttons.addEventListener('click', choiceButton));
 });
 
@@ -68,7 +68,7 @@ function queue(toggle) {
                 }
             })
             .then(() => {
-                images[i].addEventListener('transitionend', event => {
+                images[i].addEventListener('transitionend', (event) => {
                     event.stopPropagation();
                     if (!toggle) {
                         hideElement(headers[i]);
@@ -78,7 +78,7 @@ function queue(toggle) {
                 });
             })
             .then(() => {
-                headers[i].addEventListener('transitionend', event => {
+                headers[i].addEventListener('transitionend', (event) => {
                     event.stopPropagation();
                     if (!toggle) {
                         hideElement(articles[i]);
@@ -88,7 +88,7 @@ function queue(toggle) {
                 });
             })
             .then(() => {
-                articles[i].addEventListener('transitionend', event => {
+                articles[i].addEventListener('transitionend', (event) => {
                     event.stopPropagation();
                     if (!toggle) {
                         showElement(articles[i]);

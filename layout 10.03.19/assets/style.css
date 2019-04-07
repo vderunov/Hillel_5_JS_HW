@@ -61,6 +61,10 @@ h2 {
     width: 100%;
 }
 
+#section_stud_table-jq {
+    margin: 0 auto;
+}
+
 #map {
     height: 450px;
 }
@@ -125,7 +129,8 @@ h2 {
 .block__elem4,
 .block__elem5,
 .block__elem6,
-.block__elem7 {
+.block__elem7,
+.block__elem8 {
     margin-top: 15px;
 }
 
