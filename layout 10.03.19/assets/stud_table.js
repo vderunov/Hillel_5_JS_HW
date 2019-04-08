@@ -5,6 +5,7 @@ let startDate = document.querySelector('.start-date');
 let age = document.querySelector('.age');
 let addBtn = document.querySelector('.add_btn');
 let cancelBtn = document.querySelector('.cancel_btn');
+let webSite = document.querySelector('.web-site');
 // let saveBtn = document.querySelector('.save_btn');
 
 lastName.addEventListener('input', checkValueLastName);
@@ -12,6 +13,7 @@ firstName.addEventListener('input', checkValueFirstName);
 endDate.addEventListener('input', checkEndDate);
 startDate.addEventListener('input', checkStartDate);
 age.addEventListener('input', checkAge);
+webSite.addEventListener('input', checkWebSite);
 addBtn.addEventListener('click', makeStudTable);
 cancelBtn.addEventListener('click', clearField);
 
@@ -20,6 +22,7 @@ firstName.addEventListener('input', getValidate);
 endDate.addEventListener('input', getValidate);
 startDate.addEventListener('input', getValidate);
 age.addEventListener('input', getValidate);
+webSite.addEventListener('input', getValidate);
 
 function clearField() {
     let allWarningBorder = document.querySelectorAll('.warning-border');
@@ -28,6 +31,7 @@ function clearField() {
     let inputAge = document.querySelector('.input-age');
     let inputLastName = document.querySelector('.input-last-name');
     let inputFirstName = document.querySelector('.input-first-name');
+    let inputWebSite = document.querySelector('.input-web-site');
 
     for (let i = 0; i < allWarningBorder.length; i++) {
         allWarningBorder[i].classList.remove('warning-border');
@@ -52,13 +56,20 @@ function clearField() {
     if (inputAge.children[1]) {
         inputAge.removeChild(inputAge.children[1]);
     }
+
+    if (inputWebSite.children[1]) {
+        inputWebSite.removeChild(inputWebSite.children[1]);
+    }
 }
 
 function checkValueLastName() {
     let inputLastName = document.querySelector('.input-last-name');
     let valueLastName = document.querySelector('.last-name').value;
 
-    if (lastName.className === 'last-name warning-border' && valueLastName === '') {
+    if (
+        lastName.className === 'last-name warning-border' &&
+        valueLastName === ''
+    ) {
         lastName.classList.remove('warning-border');
         inputLastName.removeChild(inputLastName.children[1]);
         return;
@@ -80,7 +91,8 @@ function checkValueLastName() {
                 let span = document.createElement('span');
                 span.className = 'warning-span';
                 lastName.classList.add('warning-border');
-                span.innerHTML = 'Фамилия должна содержать только буквенные символы!';
+                span.innerHTML =
+                    'Фамилия должна содержать только буквенные символы!';
                 inputLastName.appendChild(span);
                 return;
             }
@@ -115,7 +127,8 @@ function checkValueLastName() {
                 let span = document.createElement('span');
                 lastName.classList.add('warning-border');
                 span.className = 'warning-span';
-                span.innerHTML = 'Фамилия должна содержать только буквенные символы!';
+                span.innerHTML =
+                    'Фамилия должна содержать только буквенные символы!';
                 inputLastName.appendChild(span);
                 return;
             }
@@ -124,8 +137,14 @@ function checkValueLastName() {
     }
 
     if (
-        !(valueLastName.charCodeAt(0) >= 65 && valueLastName.charCodeAt(0) <= 90) &&
-        !(valueLastName.charCodeAt(0) >= 1040 && valueLastName.charCodeAt(0) <= 1071)
+        !(
+            valueLastName.charCodeAt(0) >= 65 &&
+            valueLastName.charCodeAt(0) <= 90
+        ) &&
+        !(
+            valueLastName.charCodeAt(0) >= 1040 &&
+            valueLastName.charCodeAt(0) <= 1071
+        )
     ) {
         if (lastName.className !== 'last-name warning-border') {
             let span = document.createElement('span');
@@ -148,7 +167,10 @@ function checkValueFirstName() {
     let inputFirstName = document.querySelector('.input-first-name');
     let valueFirstName = document.querySelector('.first-name').value;
 
-    if (firstName.className === 'first-name warning-border' && valueFirstName === '') {
+    if (
+        firstName.className === 'first-name warning-border' &&
+        valueFirstName === ''
+    ) {
         firstName.classList.remove('warning-border');
         inputFirstName.removeChild(inputFirstName.children[1]);
         return;
@@ -170,7 +192,8 @@ function checkValueFirstName() {
                 let span = document.createElement('span');
                 span.className = 'warning-span';
                 firstName.classList.add('warning-border');
-                span.innerHTML = 'Имя должно содержать только буквенные символы!';
+                span.innerHTML =
+                    'Имя должно содержать только буквенные символы!';
                 inputFirstName.appendChild(span);
                 return;
             }
@@ -205,7 +228,8 @@ function checkValueFirstName() {
                 let span = document.createElement('span');
                 firstName.classList.add('warning-border');
                 span.className = 'warning-span';
-                span.innerHTML = 'Имя должно содержать только буквенные символы!';
+                span.innerHTML =
+                    'Имя должно содержать только буквенные символы!';
                 inputFirstName.appendChild(span);
                 return;
             }
@@ -214,8 +238,14 @@ function checkValueFirstName() {
     }
 
     if (
-        !(valueFirstName.charCodeAt(0) >= 65 && valueFirstName.charCodeAt(0) <= 90) &&
-        !(valueFirstName.charCodeAt(0) >= 1040 && valueFirstName.charCodeAt(0) <= 1071)
+        !(
+            valueFirstName.charCodeAt(0) >= 65 &&
+            valueFirstName.charCodeAt(0) <= 90
+        ) &&
+        !(
+            valueFirstName.charCodeAt(0) >= 1040 &&
+            valueFirstName.charCodeAt(0) <= 1071
+        )
     ) {
         if (firstName.className !== 'first-name warning-border') {
             let span = document.createElement('span');
@@ -239,7 +269,10 @@ function checkEndDate() {
     let inputEndDate = document.querySelector('.input-end-date');
     let valueStartDate = document.querySelector('.start-date').value;
 
-    if (endDate.className === 'end-date warning-border' && valueEndDate === '') {
+    if (
+        endDate.className === 'end-date warning-border' &&
+        valueEndDate === ''
+    ) {
         endDate.classList.remove('warning-border');
         inputEndDate.removeChild(inputEndDate.children[1]);
         return;
@@ -249,7 +282,10 @@ function checkEndDate() {
         return;
     }
 
-    if (valueEndDate > 2020 && endDate.className === 'end-date warning-border') {
+    if (
+        valueEndDate > 2020 &&
+        endDate.className === 'end-date warning-border'
+    ) {
         endDate.classList.remove('warning-border');
         inputEndDate.removeChild(inputEndDate.children[1]);
     }
@@ -266,7 +302,10 @@ function checkEndDate() {
         return;
     }
 
-    if (valueEndDate < 1950 && endDate.className === 'end-date warning-border') {
+    if (
+        valueEndDate < 1950 &&
+        endDate.className === 'end-date warning-border'
+    ) {
         endDate.classList.remove('warning-border');
         inputEndDate.removeChild(inputEndDate.children[1]);
     }
@@ -283,7 +322,10 @@ function checkEndDate() {
         return;
     }
 
-    if (valueEndDate < valueStartDate && endDate.className === 'end-date warning-border') {
+    if (
+        valueEndDate < valueStartDate &&
+        endDate.className === 'end-date warning-border'
+    ) {
         endDate.classList.remove('warning-border');
         inputEndDate.removeChild(inputEndDate.children[1]);
     }
@@ -310,7 +352,10 @@ function checkStartDate() {
     let valueStartDate = document.querySelector('.start-date').value;
     let inputStartDate = document.querySelector('.input-start-date');
 
-    if (startDate.className === 'start-date warning-border' && valueStartDate === '') {
+    if (
+        startDate.className === 'start-date warning-border' &&
+        valueStartDate === ''
+    ) {
         startDate.classList.remove('warning-border');
         inputStartDate.removeChild(inputStartDate.children[1]);
         return;
@@ -320,7 +365,10 @@ function checkStartDate() {
         return;
     }
 
-    if (valueStartDate > 2020 && startDate.className === 'start-date warning-border') {
+    if (
+        valueStartDate > 2020 &&
+        startDate.className === 'start-date warning-border'
+    ) {
         startDate.classList.remove('warning-border');
         inputStartDate.removeChild(inputStartDate.children[1]);
     }
@@ -337,7 +385,10 @@ function checkStartDate() {
         return;
     }
 
-    if (valueStartDate < 1950 && startDate.className === 'start-date warning-border') {
+    if (
+        valueStartDate < 1950 &&
+        startDate.className === 'start-date warning-border'
+    ) {
         startDate.classList.remove('warning-border');
         inputStartDate.removeChild(inputStartDate.children[1]);
     }
@@ -414,19 +465,59 @@ function checkAge() {
     }
 }
 
+function checkWebSite() {
+    let valueWebSite = document.querySelector('.web-site').value;
+    let inputWebSite = document.querySelector('.input-web-site');
+
+    if (
+        webSite.className === 'web-site warning-border' &&
+        valueWebSite === ''
+    ) {
+        webSite.classList.remove('warning-border');
+        inputWebSite.removeChild(inputWebSite.children[1]);
+        return;
+    }
+
+    if (valueWebSite == false) {
+        return;
+    }
+
+    let expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
+    let regexp = new RegExp(expression);
+
+    if (!valueWebSite.match(regexp)) {
+        if (webSite.className !== 'web-site warning-border') {
+            let span = document.createElement('span');
+            span.className = 'warning-span';
+            webSite.classList.add('warning-border');
+            span.innerHTML = 'Email введен не корректно!';
+            inputWebSite.appendChild(span);
+            return;
+        }
+        return;
+    }
+
+    if (webSite.className === 'web-site warning-border') {
+        webSite.classList.remove('warning-border');
+        inputWebSite.removeChild(inputWebSite.children[1]);
+    }
+}
+
 function getValidate() {
     let inputEndDate = document.querySelector('.input-end-date');
     let inputStartDate = document.querySelector('.input-start-date');
     let inputAge = document.querySelector('.input-age');
     let inputLastName = document.querySelector('.input-last-name');
     let inputFirstName = document.querySelector('.input-first-name');
+    let inputWebSite = document.querySelector('.input-web-site');
 
     if (
         inputLastName.children[1] ||
         inputFirstName.children[1] ||
         inputEndDate.children[1] ||
         inputStartDate.children[1] ||
-        inputAge.children[1]
+        inputAge.children[1] ||
+        inputWebSite.children[1]
     ) {
         addBtn.setAttribute('disabled', 'disabled');
         addBtn.classList.remove('available_add_btn');
@@ -450,7 +541,8 @@ function getValidate() {
         document.querySelector('.first-name').value &&
         document.querySelector('.start-date').value &&
         document.querySelector('.end-date').value &&
-        document.querySelector('.age').value
+        document.querySelector('.age').value &&
+        document.querySelector('.web-site').value
     ) {
         addBtn.classList.add('available_add_btn');
         addBtn.removeAttribute('disabled');
@@ -492,10 +584,12 @@ function makeStudTable() {
     k += `<td>${valueStartDate}</td>`;
     k += `<td>${valueEndDate}</td>`;
     k += `<td>${valueAge}</td>`;
-    k += `<td onClick="edit(this)">${(document.createElement('img').innerHTML = "<img src='/Users/vderunov/Documents/JavaScript/lesson_20_OOP_Part_2/layout/assets/img/pencil.png'>")}</td>`;
+    k += `<td onClick="edit(this)">${(document.createElement('img').innerHTML =
+        "<img src='/Users/vderunov/Documents/JavaScript/lesson_20_OOP_Part_2/layout/assets/img/pencil.png'>")}</td>`;
     k += `<td onClick="this.parentNode.parentNode.removeChild(this.parentNode);">${(document.createElement(
-        'img',
-    ).innerHTML = "<img src='/Users/vderunov/Documents/JavaScript/lesson_20_OOP_Part_2/layout/assets/img/trash.png'>")}</td>`;
+        'img'
+    ).innerHTML =
+        "<img src='/Users/vderunov/Documents/JavaScript/lesson_20_OOP_Part_2/layout/assets/img/trash.png'>")}</td>`;
 
     k += '</tr>';
 
@@ -532,9 +626,13 @@ function edit(q) {
         document.querySelector('.age').value = '';
     }
 
-    document.querySelector('.last-name').value = q.parentNode.children[1].textContent;
-    document.querySelector('.first-name').value = q.parentNode.children[2].textContent;
-    document.querySelector('.start-date').value = q.parentNode.children[3].textContent;
-    document.querySelector('.end-date').value = q.parentNode.children[4].textContent;
+    document.querySelector('.last-name').value =
+        q.parentNode.children[1].textContent;
+    document.querySelector('.first-name').value =
+        q.parentNode.children[2].textContent;
+    document.querySelector('.start-date').value =
+        q.parentNode.children[3].textContent;
+    document.querySelector('.end-date').value =
+        q.parentNode.children[4].textContent;
     document.querySelector('.age').value = q.parentNode.children[5].textContent;
 }
