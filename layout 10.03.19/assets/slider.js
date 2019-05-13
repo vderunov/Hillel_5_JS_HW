@@ -1,6 +1,6 @@
 function Slider() {
-    this.sliderInf = document.getElementById('section_infinity_slider');
-    this.sliderModern = document.getElementById('section_modern_slider');
+    this.sliderInf = document.querySelector('.section_infinity_slider');
+    this.sliderModern = document.querySelector('.section_modern_slider');
     this.initInfSlider();
     this.initModernSlider();
     this.carousel(this.buttonsModernSlider, this.dotsModernSlider);
@@ -16,13 +16,13 @@ function Slider() {
     // this.wrapperInfSlider.addEventListener('mouseover', runSlider.bind(null, this.initInfSlider));
 }
 
-Slider.prototype.initInfSlider = function () {
+Slider.prototype.initInfSlider = function() {
     this.wrapperInfSlider = this.sliderInf.querySelector('.slider-wrapper');
     this.slidesInfSlider = this.sliderInf.querySelectorAll('.slide');
     this.slideInfSlider = this.sliderInf.querySelector('.slide');
 };
 
-Slider.prototype.initModernSlider = function () {
+Slider.prototype.initModernSlider = function() {
     this.wrapperModernSlider = this.sliderModern.querySelector('.slider-wrapper');
     this.slidesModernSlider = this.sliderModern.querySelectorAll('.slide');
     this.slideModernSlider = this.sliderModern.querySelector('.slide');
@@ -89,7 +89,7 @@ function move(slideModernSlider, wrapperModernSlider) {
     wrapperModernSlider.style.transform = `translateX(${-this.index * size}px)`;
 }
 
-Slider.prototype.carousel = function (buttonsModernSlider, dotsModernSlider) {
+Slider.prototype.carousel = function(buttonsModernSlider, dotsModernSlider) {
     let max = buttonsModernSlider.length;
     let maxDots = dotsModernSlider.length;
 
@@ -102,7 +102,7 @@ Slider.prototype.carousel = function (buttonsModernSlider, dotsModernSlider) {
     }
 };
 
-Slider.ol_move = function (box) {
+Slider.ol_move = function(box) {
     let max = box.slidesModernSlider.length;
     let size = box.slideModernSlider.clientWidth;
     box.wrapperModernSlider.style.transition = 'transform .5s ease-in-out';
@@ -113,7 +113,7 @@ Slider.ol_move = function (box) {
     jumpDots(box.slidesModernSlider, box.slideModernSlider, box.wrapperModernSlider);
 };
 
-Slider.next = function (box) {
+Slider.next = function(box) {
     let max = box.slidesModernSlider.length;
     let size = box.slideModernSlider.clientWidth;
     box.wrapperModernSlider.style.transition = 'transform .5s ease-in-out';
@@ -124,7 +124,7 @@ Slider.next = function (box) {
     jumpDots(box.slidesModernSlider, box.slideModernSlider, box.wrapperModernSlider);
 };
 
-Slider.prev = function (box) {
+Slider.prev = function(box) {
     let size = box.slideModernSlider.clientWidth;
     box.wrapperModernSlider.style.transition = 'transform .5s ease-in-out';
     index <= 0 ? false : index--;

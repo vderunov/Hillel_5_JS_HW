@@ -16,7 +16,7 @@
     <script src="./assets/resize.js" defer></script>
     <script src="./assets/timer.js" defer></script>
     <script src="./assets/click_button.js" defer></script>
-    <script src="./assets/page_switching.js" defer></script>
+    <script src="./assets/tabs.js" defer></script>
     <script src="./assets/table.js" defer></script>
     <script src="./assets/stud_table.js" defer></script>
     <script src="./assets/slider.js" defer></script>
@@ -50,31 +50,31 @@
 
     <div class="dropdown-menu dropdown-menu_padding">
         <div id="myDropdown" class="dropdown-content">
-            <div class="dropdown-content__menu">
+            <div class="dropdown-content__menu info-header">
                 <ul class="block">
-                    <li class="block__elem1">
-                        <a href="#" class="link" id="link_infinity_slider">Infinity slider</a>
+                    <li>
+                        <a href="#" class="link info-header-tab">Infinity slider</a>
                     </li>
-                    <li class="block__elem2">
-                        <a href="#" class="link" id="link_modern_slider">Modern slider</a>
+                    <li>
+                        <a href="#" class="link info-header-tab">Modern slider</a>
                     </li>
-                    <li class="block__elem3">
-                        <a href="#" class="link" id="link_buttons">Button</a>
+                    <li>
+                        <a href="#" class="link info-header-tab">Button</a>
                     </li>
-                    <li class="block__elem4">
-                        <a href="#" class="link" id="link_table">Table</a>
+                    <li>
+                        <a href="#" class="link info-header-tab">Table</a>
                     </li>
-                    <li class="block__elem5">
-                        <a href="#" class="link" id="link_stud_table">Student table</a>
+                    <li>
+                        <a href="#" class="link info-header-tab">Student table</a>
                     </li>
-                    <li class="block__elem6">
-                        <a href="#" class="link" id="link_autocomplete">Autocomplete</a>
+                    <li>
+                        <a href="#" class="link info-header-tab">Progressbar</a>
                     </li>
-                    <li class="block__elem7">
-                        <a href="#" class="link" id="link_progressbar">Progressbar</a>
+                    <li>
+                        <a href="#" class="link info-header-tab">Autocomplete</a>
                     </li>
-                    <li class="block__elem8">
-                        <a href="#" class="link" id="link_stud_table-jq">Student table(jQuery)</a>
+                    <li>
+                        <a href="#" class="link info-header-tab">Student table(jQuery)</a>
                     </li>
                 </ul>
             </div>
@@ -87,7 +87,7 @@
                 </span>
             </button>
 
-            <section id="section_infinity_slider">
+            <section class="info-tabcontent section_infinity_slider">
                 <h1>Infinity slider</h1>
                 <div class="slider-box" id="main-slider">
                     <div class="slider-wrapper slider-wrapper-first">
@@ -99,7 +99,7 @@
                     </div>
                 </div>
             </section>
-            <section id="section_modern_slider" class="display_none">
+            <section class="info-tabcontent section_modern_slider">
                 <h2>Modern slider</h2>
                 <div class="slider-box" id="usual-slider">
                     <div class="slider-wrapper slider-wrapper-second">
@@ -124,7 +124,7 @@
                     <li id="ol_move" class="slider__dot sectionInfSliderol__background"></li>
                 </ol>
             </section>
-            <section id="section_buttons" class="display_none">
+            <section class="info-tabcontent">
                 <h1>BUTTONS</h1>
                 <div class="main-content__arcticle main-content__arcticle_margin">
                     <div class="sectionButtons_flex sectionButtons_margin">
@@ -134,7 +134,7 @@
                     </div>
                 </div>
             </section>
-            <section id="section_table" class="display_none">
+            <section class="info-tabcontent">
                 <h1>TABLE</h1>
                 <div class="main-content__arcticle__margin">
                     <form class="table-form">
@@ -165,7 +165,7 @@
                 </div>
             </section>
 
-            <section id="section_stud_table" class="display_none">
+            <section class="info-tabcontent">
                 <h1>Students TABLE</h1>
                 <form action="#" class="sectionStudTableform">
                     <fieldset class="sectionStudTablefieldset">
@@ -255,7 +255,7 @@
                     <tbody class="innerStudTable"></tbody>
                 </table>
             </section>
-            <section id="section_progressbar" class="display_none">
+            <section class="info-tabcontent">
                 <div class="progress-bar">
                     <span class="progress-value"></span>
                 </div>
@@ -319,12 +319,12 @@
                     </div>
                 </div>
             </section>
-            <section id="section_autocomplete" class="display_none">
+            <section class="info-tabcontent width-100-proc">
                 <h3>My Google Maps</h3>
                 <input id="pac-input" class="controls" type="text" placeholder="Search Box" />
                 <div id="map"></div>
             </section>
-            <section id="section_stud_table-jq" class="display_none">
+            <section class="info-tabcontent">
                 <h1>Student table(jQuery)</h1>
                 <form action="#" class="sectionStudTableform">
                     <fieldset class="sectionStudTablefieldset">

@@ -1,4 +1,4 @@
-let myButton = document.querySelectorAll('#my_button');
+const myButton = document.querySelectorAll('#my_button');
 
 for (let i = 0; i < myButton.length; i++) {
     myButton[i].addEventListener('click', clickMe);
