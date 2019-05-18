@@ -1,13 +1,9 @@
-const myButton = document.querySelectorAll('#my_button');
+const myButtons = document.querySelectorAll('.my_button');
 
-for (let i = 0; i < myButton.length; i++) {
-    myButton[i].addEventListener('click', clickMe);
+for (let i = 0; i < myButtons.length; i++) {
+    myButtons[i].addEventListener('click', handler);
 }
 
-function clickMe() {
-    if (event.target.className === 'my_btn_red') {
-        event.target.className = 'my_btn';
-    } else {
-        event.target.className = 'my_btn_red';
-    }
+function handler() {
+    event.target.classList.toggle('my_btn_red');
 }
